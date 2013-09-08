@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<techniques>
+	<style name="Boxing" type="Mortal"/>
+	<technique name="One-Two Combo" style="Boxing" range="Mid" movement="Still" type="Strike" defeats="Rush">
+		<clash>
+			<addAttribute id="Dexterity"/>
+			<addConstant amount="-1"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Strength"/>
+			<addConstant amount="3"/>
+			<subtractAttribute id="Stamina"/>
+			<min amount="1"/>
+		</damage>
+	</technique>
+	<technique name="Rushing Uppercut" style="Boxing" range="Mid" movement="Advance" type="Rush" defeats="Aerial">
+		<clash>
+			<addAttribute id="Dexterity"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Strength"/>
+			<addConstant amount="1"/>
+			<subtractAttribute id="Dexterity"/>
+			<min amount="1"/>
+		</damage>
+	</technique>
+	<technique name="Cross Counter" style="Boxing" range="Close" movement="Still" type="Defensive" defeats="Strike">
+		<clash>
+			<addAttribute id="Stamina"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Dexterity"/>
+			<subtractAttribute id="Stamina"/>
+			<min amount="2"/>
+		</damage>
+		<tag id="Counterattack"/>
+	</technique>
+</techniques>

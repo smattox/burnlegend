@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<techniques>
+	<style name="Abyssal Techniques" type="Shinigami"/>
+	<technique name="Banishing Strike" style="Abyssal Techniques" range="Close" movement="Still" type="Strike" defeats="Grapple">
+		<clash>
+			<addAttribute id="Strength"/>
+			<addConstant amount="2"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Stamina"/>
+			<addConstant amount="1"/>
+			<subtractAttribute id="Stamina"/>
+			<min amount="1"/>
+		</damage>
+		<effects>
+		    <OnHitCondition>
+		        <KnockbackEffect/>
+		    </OnHitCondition>
+		</effects>
+		<refinement name="Binding Strike" rank="3" cost="4">
+		    <effects>
+		    	<OnHitCondition>
+		    	    <PreventTechniqueEffect movement="Advance"/>
+		    	</OnHitCondition>
+		    </effects>
+		</refinement>
+	</technique>
+	<technique name="Crashing Shadow Strike" style="Abyssal Techniques" range="Close" movement="Still" type="Strike" defeats="Aerial">
+	    <KiCost amount="1"/>
+		<clash>
+			<addAttribute id="Dexterity"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Strength"/>
+			<addConstant amount="2"/>
+			<subtractAttribute id="Stamina"/>
+			<min amount="1"/>
+		</damage>
+		<effects>
+		    <OnHitCondition>
+		        <FutureClashModEffect amount="-3"/>
+		    </OnHitCondition>
+		</effects>
+		<refinement name="Shadow Blinding Method" rank="2" cost="3">
+		    <effects>
+			    <OpponentTechniqueTypeCondition id="Aerial">
+			        <OnHitCondition>
+			            <ModTraitEffect id="Ki" amount="-1"/>
+			        </OnHitCondition>
+			    </OpponentTechniqueTypeCondition>
+		    </effects>
+		</refinement>
+	</technique>
+	<technique name="Shadow Step: Death From Above" style="Abyssal Techniques" range="Mid" movement="Advance" type="Aerial" defeats="Projectile">
+		<KiCost amount="1"/>
+		<clash>
+			<addAttribute id="Dexterity"/>
+			<addConstant amount="1"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Strength"/>
+			<addConstant amount="1"/>
+			<subtractAttribute id="Stamina"/>
+			<min amount="1"/>
+		</damage>
+		<effects>
+		    <OnHitCondition>
+		        <ForcedMovementEffect movement="Still"/>
+		    </OnHitCondition>
+		</effects>
+	</technique>
+	<technique name="Mu Ken" style="Abyssal Techniques" range="Mid" movement="Still" type="Projectile" defeats="Defensive">
+		<KiCost amount="1"/>
+		<clash>
+			<addAttribute id="Dexterity"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Stamina"/>
+			<addConstant amount="3"/>
+			<subtractAttribute id="Stamina"/>
+			<min amount="1"/>
+		</damage>
+		<option label="Movement?">
+			<BackMovementOption/>
+			<StillMovementOption/>
+		</option>
+		<refinement name="Guttering Flame" rank="5" cost="5">
+		    <effects>
+		    	<OnHitCondition>
+		        	<ModTraitEffect id="Ki" amount="-1"/>
+		    	</OnHitCondition>    
+		    </effects>
+		</refinement>
+		<tag id="ImmuneToReversal"/>
+	</technique>
+	<technique name="Abyssal Reaper Strike" style="Abyssal Techniques" range="Mid" movement="Advance" type="Rush" defeats="Strike">
+		<clash>
+			<addAttribute id="Strength"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Dexterity"/>
+			<addConstant amount="2"/>
+			<subtractAttribute id="Stamina"/>
+			<min amount="1"/>
+		</damage>
+		<effects>
+			<OpponentTechniqueTypeCondition id="Strike">
+			    <OnHitCondition>
+			        <AdditionalStaggerEffect amount="1"/>
+			    </OnHitCondition>
+			</OpponentTechniqueTypeCondition>    
+		</effects>
+	</technique>
+	<technique name="Grand Emperor Guillotine Kick" style="Abyssal Techniques" range="Mid" movement="Advance" type="Rush" defeats="Rush">
+		<clash>
+			<addAttribute id="Dexterity"/>
+			<addConstant amount="1"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Strength"/>
+			<addConstant amount="1"/>
+			<subtractAttribute id="Strength"/>
+			<min amount="1"/>
+		</damage>
+		<effects>
+			<OnHitCondition>
+				<FutureClashModEffect amount="-1"/>
+			</OnHitCondition>
+		</effects>
+		<refinement name="Absolute Execution" rank="3" cost="4">
+		    <effects>
+		        <AttackerLastTechniqueCondition id="Grand Emperor Guillotine Kick">
+		            <RevisedDamageEffect>
+		                <addAttribute id="Strength"/>
+		                <addAttribute id="Strength"/>
+						<subtractAttribute id="Strength"/>
+						<min amount="3"/>
+		            </RevisedDamageEffect>
+		        </AttackerLastTechniqueCondition>
+		    </effects>
+		</refinement>
+	</technique>
+	<technique name="Breath-Stilling Touch" style="Abyssal Techniques" range="Close" movement="Advance" type="Grapple" defeats="Defensive">
+		<clash>
+			<addAttribute id="Dexterity"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Stamina"/>
+			<addConstant amount="2"/>
+			<subtractAttribute id="Strength"/>
+			<min amount="1"/>
+		</damage>
+		<effects>
+			<OnHitCondition>
+		    	<ModTraitEffect id="Overdrive" amount="SufferedDamage"/>
+			</OnHitCondition>
+		</effects>
+	</technique>
+	<technique name="Breath-Drinking Technique" style="Abyssal Techniques" range="Close" movement="Still" type="Grapple" defeats="Defensive">
+		<KiCost amount="1"/>
+		<clash>
+			<addAttribute id="Strength"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Stamina"/>
+			<subtractAttribute id="Strength"/>
+			<min amount="3"/>
+		</damage>
+		<effects>
+		    <OnVictoryCondition>
+				<ModTraitEffect id="Health" amount="InflictedDamage"/>
+			</OnVictoryCondition>
+		</effects>
+	</technique>
+	<technique name="Bottomless Abyss Defense" style="Abyssal Techniques" range="Mid" movement="Still" type="Defensive">
+		<KiCost amount="1"/>
+		<clash>
+			<addAttribute id="Stamina"/>
+			<addConstant amount="1"/>
+			<addTechnique/>
+		</clash>
+		<option label="Movement?">
+			<BackMovementOption/>
+			<StillMovementOption/>
+		</option>
+		<effects>
+		    <OnVictoryCondition>
+			    <ModTraitEffect id="Health" amount="1"/>
+			</OnVictoryCondition>
+		    <OnHitCondition>
+		        <ModTraitEffect id="Willpower" amount="-1"/>
+		    </OnHitCondition>
+		</effects>
+		<tag id="Counterattack"/>
+	</technique>
+	<technique name="Shadow Step: Spirit Raven Retreat" style="Abyssal Techniques" range="Close" movement="Back" type="Defensive" defeats="Strike">
+		<clash>
+			<addAttribute id="Dexterity"/>
+			<addTechnique/>
+		</clash>
+		<effects>
+		    <OnVictoryCondition>
+		    	<ModTraitEffect id="Ki" amount="2"/>    
+		    </OnVictoryCondition>
+		    <OnHitCondition>
+		        <ModTraitEffect id="Ki" amount="-1"/>
+		    </OnHitCondition>
+		</effects>
+	</technique>
+	<technique name="Absolute Judgement" style="Abyssal Techniques" range="Mid" movement="Still" type="Projectile" defeats="Strike,Defensive">
+	    <KiCost amount="1"/>
+		<clash>
+			<addAttribute id="Strength"/>
+			<addConstant amount="1"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Stamina"/>
+			<addConstant amount="3"/>
+			<subtractAttribute id="Dexterity"/>
+			<min amount="1"/>
+		</damage>
+		<effects>
+		    <OnHitCondition>
+		        <ModTraitEffect id="Overdrive" amount="-10"/>
+		    </OnHitCondition>
+		</effects>
+		<tag id="DestroyHealthStock"/>
+		<tag id="Overdrive"/>
+	</technique>
+	<technique name="Heart-Drinking Palm" style="Abyssal Techniques" range="Mid" movement="Advance" type="Rush" defeats="Strike,Rush">
+	    <KiCost amount="2"/>
+		<clash>
+			<addAttribute id="Dexterity"/>
+			<addConstant amount="1"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Strength"/>
+			<addConstant amount="5"/>
+			<subtractAttribute id="Stamina"/>
+			<min amount="1"/>
+		</damage>
+		<effects>
+		    <OnHitCondition>
+		        <StealTraitEffect id="Ki" amount="1"/>
+		    </OnHitCondition>
+		</effects>
+		<tag id="DestroyHealthStock"/>
+		<tag id="Overdrive"/>
+	</technique>
+</techniques>

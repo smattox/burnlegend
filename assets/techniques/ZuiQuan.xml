@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<techniques>
+	<style name="Zui Quan" type="Mortal"/>
+	<technique name="Stumbling Fist" style="Zui Quan" range="Close" movement="Still" type="Strike" defeats="Rush">
+		<clash>
+			<addAttribute id="Dexterity"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Dexterity"/>
+			<addConstant amount="2"/>
+			<subtractAttribute id="Dexterity"/>
+			<min amount="1"/>
+		</damage>
+		<effects>
+		    <AttackerLastTechniqueCondition id="Drunkard's Sway">
+		        <RevisedClashEffect>
+		            <addAttribute id="Dexterity"/>
+		            <addConstant amount="2"/>
+					<addTechnique/>
+		        </RevisedClashEffect>
+		    </AttackerLastTechniqueCondition>
+		</effects>
+	</technique>
+	<technique name="Zhang Xu Removes His Cap" style="Zui Quan" range="Mid" movement="Advance" type="Rush" defeats="Strike">
+		<clash>
+			<addAttribute id="Dexterity"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Strength"/>
+			<addConstant amount="2"/>
+			<subtractAttribute id="Dexterity"/>
+			<min amount="1"/>
+		</damage>
+		<effects>
+		    <AttackerLastTechniqueCondition id="Drunkard's Sway">
+		        <RevisedClashEffect>
+		            <addAttribute id="Dexterity"/>
+		            <addConstant amount="2"/>
+					<addTechnique/>
+		        </RevisedClashEffect>
+		    </AttackerLastTechniqueCondition>
+		</effects>
+	</technique>
+	<technique name="Drunkard's Sway" style="Zui Quan" range="Close" movement="Advance" type="Defensive" defeats="Aerial">
+		<clash>
+			<addAttribute id="Dexterity"/>
+			<addTechnique/>
+		</clash>
+		<effects>
+		    <OnVictoryCondition>
+		    	<ModTraitEffect id="Ki" amount="1"/>
+		    	<FutureDamageModEffect amount="2" duration="1"/>    
+		    </OnVictoryCondition>
+		</effects>
+		<option label="Movement?">
+			<BackMovementOption/>
+			<AdvanceMovementOption/>
+		</option>
+	</technique>
+</techniques>

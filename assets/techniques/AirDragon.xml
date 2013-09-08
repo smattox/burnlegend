@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<techniques>
+	<style name="Air Dragon Style" type="Ryuujin" subtype="Air"/>
+	<technique name="Knife-Wind Strike" style="Air Dragon Style" range="Close" movement="Still" type="Strike" defeats="Rush">
+		<clash>
+			<addAttribute id="Dexterity"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Dexterity"/>
+			<addConstant amount="1"/>
+			<subtractAttribute id="Strength"/>
+			<min amount="1"/>
+		</damage>
+		<tag id="AirBinding"/>
+	</technique>
+	<technique name="Sky-Breaking Kick" style="Air Dragon Style" range="Close" movement="Still" type="Strike" defeats="Aerial">
+		<KiCost amount="1"/>
+		<clash>
+			<addAttribute id="Strength"/>
+			<addConstant amount="1"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Stamina"/>
+			<addConstant amount="3"/>
+			<subtractAttribute id="Stamina"/>
+			<min amount="1"/>
+		</damage>
+		<option label="Movement?">
+			<BackMovementOption/>
+			<StillMovementOption/>
+		</option>
+		<tag id="LightningBinding"/>
+	</technique>
+	<technique name="Air Dragon Scream" style="Air Dragon Style" range="Mid" movement="Still" type="Projectile" defeats="Strike">
+		<clash>
+			<addAttribute id="Strength"/>
+			<addConstant amount="2"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Dexterity"/>
+			<subtractAttribute id="Dexterity"/>
+			<min amount="1"/>
+		</damage>
+		<effects>
+		    <OnHitCondition>
+		        <FutureClashModEffect amount="2"/>
+		    </OnHitCondition>
+		</effects>
+		<refinement name="Air Bullet Style" rank="3" cost="4">
+		    <effects>
+		    	<OpponentTechniqueTypeCondition id="Projectile">
+					<ClashModEffect amount="1"/>
+				</OpponentTechniqueTypeCondition>     
+		    </effects>
+		</refinement>
+		<tag id="AirBinding"/>
+	</technique>
+	<technique name="Sky-Fire Strike" style="Air Dragon Style" range="Mid" movement="Still" type="Projectile" defeats="Defensive">
+		<KiCost amount="1"/>
+		<clash>
+			<addAttribute id="Stamina"/>
+			<addConstant amount="1"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Dexterity"/>
+			<addConstant amount="1"/>
+			<subtractAttribute id="Strength"/>
+			<min amount="2"/>
+		</damage>
+		<refinement name="Nerve-Biting Dragon Strike" rank="2" cost="4">
+		    <effects>
+		    	<OnHitCondition>
+		        	<FutureClashModEffect amount="1"/>
+		    	</OnHitCondition>   
+		    </effects>
+		</refinement>
+		<tag id="LightningBinding"/>
+	</technique>
+	<technique name="Katabatic Wind-Claw" style="Air Dragon Style" range="Mid" movement="Advance" type="Aerial" defeats="Projectile">
+		<clash>
+			<addAttribute id="Dexterity"/>
+			<addConstant amount="1"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Dexterity"/>
+			<subtractAttribute id="Strength"/>
+			<min amount="1"/>
+		</damage>
+		<refinement name="Air Dragon's Embrace" rank="1" cost="3">
+		    <effects>
+		    	<OpponentTechniqueTypeCondition id="Aerial">
+					<ClashModEffect amount="1"/>
+				</OpponentTechniqueTypeCondition>     
+		    </effects>
+		</refinement>
+		<tag id="AirBinding"/>
+	</technique>
+	<technique name="Dragon Cannon Rush" style="Air Dragon Style" range="Mid" movement="Advance" type="Rush" defeats="Grapple">
+		<clash>
+			<addAttribute id="Stamina"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Dexterity"/>
+			<addConstant amount="2"/>
+			<subtractAttribute id="Stamina"/>
+			<min amount="2"/>
+		</damage>
+		<refinement name="Hurricane Rebuke Refinement" rank="3" cost="4" exclusive="true">
+		    <option label="Knockback?">
+		        <EffectOption>
+		            <OnHitCondition>
+		        		<KnockbackEffect/>    
+		            </OnHitCondition>
+		        </EffectOption>
+		    </option>
+		</refinement>
+		<refinement name="Dragon Rail Strike" rank="3" cost="4" exclusive="true">
+		    <effects>
+		    	<OpponentTechniqueTypeCondition id="Strike">
+					<ClashModEffect amount="2"/>
+				</OpponentTechniqueTypeCondition>     
+		    </effects>
+		</refinement>
+		<tag id="AirBinding"/>
+	</technique>
+	<technique name="Racing Lightning Method" style="Air Dragon Style" range="Mid" movement="Advance" type="Rush" defeats="Strike">
+		<clash>
+			<addAttribute id="Dexterity"/>
+			<addConstant amount="3"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Strength"/>
+			<subtractAttribute id="Stamina"/>
+			<min amount="1"/>
+		</damage>
+		<effects>
+		    <OnHitCondition>
+		        <KnockbackEffect/>
+		    </OnHitCondition>
+		</effects>
+		<refinement name="Electric Heart Strike" rank="3" cost="3">
+		    <upgrades>
+		        <DamageUpgrade amount="1"/>
+		    </upgrades>
+		</refinement>
+		<tag id="LightningBinding"/>
+	</technique>
+	<technique name="Howling Gale Toss" style="Air Dragon Style" range="Close" movement="Still" type="Grapple" defeats="Defensive">
+		<clash>
+			<addAttribute id="Dexterity"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Dexterity"/>
+			<subtractAttribute id="Dexterity"/>
+			<min amount="2"/>
+		</damage>
+		<effects>
+		    <OnHitCondition>
+		        <MustSpendWillpowerToUseProjectilesEffect/>
+		        <KnockbackEffect/>
+		    </OnHitCondition>
+		</effects>
+		<refinement name="Wind Step Grapple" rank="2" cost="3">
+		    <upgrades>
+		        <RangeUpgrade id="Mid"/>
+		    </upgrades>
+		    <option label="Movement?">
+				<AdvanceMovementOption/>
+				<StillMovementOption/>
+			</option>
+		</refinement>
+		<tag id="AirBinding"/>
+	</technique>
+	<technique name="Cyclone Winds Defense" style="Air Dragon Style" range="Mid" movement="Still" type="Defensive" defeats="Projectile">
+		<KiCost amount="1"/>
+		<clash>
+			<addAttribute id="Dexterity"/>
+			<addConstant amount="2"/>
+			<addTechnique/>
+		</clash>
+		<option label="Movement?">
+			<BackMovementOption/>
+			<StillMovementOption/>
+		</option>
+		<effects>
+		    <OnVictoryCondition>
+		        <HealthStockAttributeResistEffect id="Dexterity" amount="1"/>
+		        <HealthStockAttributeResistEffect id="Stamina" amount="1"/>
+		    </OnVictoryCondition>
+		</effects>
+		<tag id="AirBinding"/>
+		<tag id="ImmuneToReversal"/>
+	</technique>
+	<technique name="Thunder Cyclone Burst" style="Air Dragon Style" range="Close" movement="Still" type="Strike" defeats="Aerial,Grapple">
+		<KiCost amount="2"/>
+		<clash>
+			<addAttribute id="Dexterity"/>
+			<addConstant amount="2"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Dexterity"/>
+			<addConstant amount="4"/>
+			<subtractAttribute id="Stamina"/>
+			<min amount="2"/>
+		</damage>
+		<effects>
+		    <OnHitCondition>
+		        <KnockbackEffect/>
+		    </OnHitCondition>
+		</effects>
+		<tag id="MustClashAll"/>
+		<tag id="DestroyHealthStock"/>
+		<tag id="Overdrive"/>
+	</technique>
+</techniques>

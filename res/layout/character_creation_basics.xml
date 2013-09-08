@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <com.mobius.legend.management.CharacterManagementOverview
+        android:id="@+id/management_overview"
+    	android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"/>
+    	
+    <LinearLayout
+    	android:layout_width="match_parent"
+    	android:layout_height="fill_parent"
+    	android:layout_weight="5"
+    	android:orientation="vertical" >
+
+	    <TextView
+			 android:layout_width="wrap_content"
+			 android:layout_height="wrap_content"
+			 android:text="Name:" />
+	    <LinearLayout
+	        android:layout_width="match_parent"
+	    	android:layout_height="wrap_content"
+	    	android:orientation="horizontal">
+	    	
+	    	<EditText
+		        android:id="@+id/characterName"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_weight="2"
+		        android:ems="10"
+	        	android:inputType="textPersonName" />
+	    	<Button
+		        android:id="@+id/randomName"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+	        	android:text="Random" />
+	    </LinearLayout>
+	    
+	    
+	    <TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="Type:" />
+	    <Spinner
+			android:id="@+id/characterType"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content" />
+	    
+	    <LinearLayout
+	        android:id="@+id/subtypeView"
+	        android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical" >
+		    <TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Element:" />
+		    <Spinner
+				android:id="@+id/subtypeSpinner"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content" />    
+	    </LinearLayout>
+	
+	    <LinearLayout
+	        android:id="@+id/okamiView"
+	        android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical" >
+		    <TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Okami Attribute:" />
+		    <Spinner
+				android:id="@+id/okamiAttributeSpinner"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content" />
+		    <CheckBox
+	        	android:id="@+id/okamiForm"
+	        	android:layout_width="wrap_content"
+	        	android:layout_height="wrap_content"
+	        	android:text="Begin Combat in True Form" />
+	    </LinearLayout>
+
+	    
+	    
+	 </LinearLayout>
+
+	 <LinearLayout
+	     android:layout_width="fill_parent"
+	     android:layout_height="wrap_content"
+	     android:layout_gravity="center_horizontal" >
+	 		<com.mobius.legend.character.creation.CharacterManagementNavigationView
+	 		    android:id="@+id/navigation"
+	 		    android:layout_width="0dp"
+	 		    android:layout_height="wrap_content"
+	 		    android:layout_gravity="center_horizontal"
+	 		    android:layout_weight="1" />
+
+	 </LinearLayout>
+</LinearLayout>

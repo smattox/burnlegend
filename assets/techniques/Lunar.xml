@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<techniques>
+	<style name="Lunar Techniques" type="Okami"/>
+	<technique name="Claw Strike" style="Lunar Techniques" range="Close" movement="Still" type="Strike" defeats="Rush">
+		<clash>
+			<addAttribute id="Dexterity"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Strength"/>
+			<addConstant amount="3"/>
+			<subtractAttribute id="Stamina"/>
+			<min amount="1"/>
+		</damage>
+		<option label="Movement?">
+			<BackMovementOption/>
+			<StillMovementOption/>
+		</option>
+		<refinement name="Bloody Fervor" rank="2" cost="3">
+			<effects>
+			    <OnVictoryCondition>
+			        <FutureClashModEffect amount="1"/>
+			    </OnVictoryCondition>
+			</effects>
+		</refinement>
+	</technique>
+	<technique name="Reaping Strike" style="Lunar Techniques" range="Close" movement="Still" type="Strike" defeats="Aerial">
+		<clash>
+			<addAttribute id="Dexterity"/>
+			<addConstant amount="2"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Strength"/>
+			<addConstant amount="1"/>
+			<subtractAttribute id="Stamina"/>
+			<min amount="1"/>
+		</damage>
+		<refinement name="Reaping Kick" rank="3" cost="4">
+		    <effects>
+		        <OnHitCondition>
+		            <KnockbackEffect/>
+		        </OnHitCondition>
+		    </effects>
+		    <upgrades>
+		    	<DamageUpgrade amount="1"/>    
+		    </upgrades>
+		</refinement>
+	</technique>
+	<technique name="Beast Cannon" style="Lunar Techniques" range="Mid" movement="Advance" type="Aerial" defeats="Projectile">
+		<clash>
+			<addAttribute id="Dexterity"/>
+			<addConstant amount="1"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Strength"/>
+			<addConstant amount="1"/>
+			<subtractAttribute id="Stamina"/>
+			<min amount="1"/>
+		</damage>
+		<refinement name="Beast Kick" rank="3" cost="4" exclusive="true">
+		    <upgrades>
+		    	<DamageUpgrade amount="1"/>    
+		    </upgrades>
+		</refinement>
+		<refinement name="Stunning Roll" rank="3" cost="4" exclusive="true">
+		    <effects>
+			    <OnHitCondition>
+			        <FutureClashModEffect amount="-1"/>
+			    </OnHitCondition>
+			</effects>
+		</refinement>
+	</technique>
+	<technique name="Air Dance" style="Lunar Techniques" range="Mid" movement="Advance" type="Aerial" defeats="Projectile">
+		<KiCost amount="1"/>
+		<clash>
+			<addAttribute id="Dexterity"/>
+			<addConstant amount="2"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Strength"/>
+			<subtractAttribute id="Stamina"/>
+			<min amount="1"/>
+		</damage>
+		<effects>
+			<OnHitCondition>
+			    <FutureClashModEffect amount="-2"/>
+			</OnHitCondition>
+		</effects>
+	</technique>
+	<technique name="Moonlight Claws" style="Lunar Techniques" range="Mid" movement="Still" type="Projectile" defeats="Rush">
+	    <KiCost amount="1"/>
+		<clash>
+			<addAttribute id="Dexterity"/>
+			<addConstant amount="3"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Dexterity"/>
+			<subtractAttribute id="Stamina"/>
+			<min amount="2"/>
+		</damage>
+		<option label="Movement?">
+			<BackMovementOption/>
+			<StillMovementOption/>
+		</option>
+		<refinement name="Moonlight Slaughter" rank="5" cost="6">
+		    <effects>
+		    	<OpponentMovementCondition id="Advance,Back">
+					<RevisedDamageEffect>
+					    <addAttribute id="Dexterity"/>
+					    <addAttribute id="Dexterity"/>
+						<subtractAttribute id="Stamina"/>
+						<min amount="1"/>
+					</RevisedDamageEffect>
+				</OpponentMovementCondition>    
+		    </effects>
+		</refinement>
+		<tag id="ImmuneToReversal"/>
+	</technique>
+	<technique name="Beast Rush" style="Lunar Techniques" range="Mid" movement="Advance" type="Rush" defeats="Strike">
+		<clash>
+			<addAttribute id="Strength"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Strength"/>
+			<addConstant amount="2"/>
+			<subtractAttribute id="Stamina"/>
+			<min amount="1"/>
+		</damage>
+		<refinement name="Beast Pounce" rank="1" cost="3">
+		    <upgrades>
+		        <DamageUpgrade amount="1"/>
+		    </upgrades>
+		</refinement>
+	</technique>
+	<technique name="Beast Sweep" style="Lunar Techniques" range="Mid" movement="Advance" type="Rush" defeats="Grapple">
+		<clash>
+			<addAttribute id="Dexterity"/>
+			<addConstant amount="2"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Strength"/>
+			<subtractAttribute id="Dexterity"/>
+			<min amount="1"/>
+		</damage>
+		<effects>
+			<OnHitCondition>
+		    	<ForcedMovementEffect movement="Still"/>
+			</OnHitCondition>   
+		</effects>
+	</technique>
+	<technique name="Savage Monkey Method" style="Lunar Techniques" range="Close" movement="Still" type="Grapple" defeats="Defensive">
+		<clash>
+			<addAttribute id="Strength"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Strength"/>
+			<addConstant amount="2"/>
+			<subtractAttribute id="Stamina"/>
+			<min amount="2"/>
+		</damage>
+	</technique>
+	<technique name="Resilience of the Bear" style="Lunar Techniques" range="Mid" movement="Still" type="Defensive">
+		<KiCost amount="1"/>
+		<clash>
+			<addAttribute id="Stamina"/>
+			<addTechnique/>
+		</clash>
+		<option label="Movement?">
+			<BackMovementOption/>
+			<StillMovementOption/>
+		</option>
+		<effects>
+		    <OnVictoryCondition>
+			    <ModTraitEffect id="Health" amount="4"/>
+			</OnVictoryCondition>
+		</effects>
+		<refinement name="Ox-Body Technique" rank="3" cost="4">
+		    <effects>
+		    	<OnVictoryCondition>
+					<NextDefenseAttributeResistEffect id="Strength,Stamina" amount="1"/>
+				</OnVictoryCondition>    
+		    </effects>
+		</refinement>
+	</technique>
+	<technique name="Cunning Serpent Counterstrike" style="Lunar Techniques" range="Close" movement="Still" type="Defensive">
+		<clash>
+			<addAttribute id="Dexterity"/>
+			<addConstant amount="1"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Dexterity"/>
+			<addOpponentClashSuccesses/>
+			<subtractAttribute id="Dexterity"/>
+			<min amount="1"/>
+		</damage>
+	</technique>
+	<technique name="Full Moon Frenzy" style="Lunar Techniques" range="Mid" movement="Advance" type="Rush" defeats="Rush,Grapple">
+	    <KiCost amount="1"/>
+		<clash>
+			<addAttribute id="Strength"/>
+			<addConstant amount="4"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Strength"/>
+			<addConstant amount="3"/>
+			<subtractAttribute id="Stamina"/>
+			<min amount="2"/>
+		</damage>
+		<tag id="DestroyHealthStock"/>
+		<tag id="Overdrive"/>
+	</technique>
+	<technique name="Moon Crescent Slash" style="Lunar Techniques" range="Mid" movement="Still" type="Projectile" defeats="Projectile,Defensive">
+	    <KiCost amount="2"/>
+		<clash>
+			<addAttribute id="Dexterity"/>
+			<addConstant amount="3"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Dexterity"/>
+			<addConstant amount="1"/>
+			<subtractAttribute id="Dexterity"/>
+			<min amount="1"/>
+		</damage>
+		<effects>
+		    <OnHitCondition>
+		        <MoonCrescentSlashEffect/>
+		    </OnHitCondition>
+		</effects>
+		<tag id="DestroyHealthStock"/>
+		<tag id="Overdrive"/>
+	</technique>
+</techniques>

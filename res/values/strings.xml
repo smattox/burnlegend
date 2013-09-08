@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, BLegendActivity!</string>
+    <string name="app_name">Burn Legend</string>
+    <string name="app_name_large">BURN LEGEND</string>
+    
+    <string name="creditsMe">Application by JMobius</string>
+    <string name="creditsExalted">Exalted and Burn Legend by White Wolf</string>
+    <string name="creditsName">Name generation by Voidstate</string>
+    <string name="blank"></string>
+    
+    <string name="ManageCharacters">Manage Characters</string>
+    <string name="Battle">Battle</string>
+    
+    <string name="AddNewCharacter">Create new character…</string>
+
+    <string name="Details">Details</string>
+    <string name="Styles">Styles</string>
+    
+    <string name="Save">Save</string>
+    <string name="SaveAs">Save As</string>
+    <string name="Delete">Delete Character</string>
+    <string name="CompleteCreation">Complete Creation</string>
+    <string name="CharacterDeleted">Character Deleted!</string>
+    <string name="ErrorDeleting">Error deleting character! :(</string>
+    <string name="NameMustNotBeBlank">Name must not be blank!</string>
+    <string name="ErrorSaving">Unknown error saving character! :(</string>
+    <string name="CharacterSaved">Character saved!</string>
+    
+    <string name="RandomNew">Randomly Create</string>
+    <string name="Proceed">Proceed</string>
+    <string name="Reversal">Reversal</string>
+    
+    <string name="Attributes">Attributes</string>
+    <string name="BasicTechniques">Basic Techniques</string>
+    <string name="MartialArts">Martial Arts</string>
+    <string name="Refinements">Refinements</string>
+    <string name="Total">Total</string>
+    
+    <string name="fight">FIGHT!</string>
+    <string name="human">Human</string>
+    <string name="cpu">CPU</string>
+    <string name="Stocks">Stocks: </string>
+    <string name="Willpower">Willpower: </string>
+    
+    <string name="versus">vs.</string>
+    
+    <string name="turnFor">TURN FOR:</string>
+    
+    <string name="Yes">Yes</string>
+    <string name="No">No</string>
+    
+</resources>

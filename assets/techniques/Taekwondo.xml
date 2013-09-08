@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<techniques>
+	<style name="Taekwondo" type="Mortal"/>
+	<technique name="Roundhouse Kick" style="Taekwondo" range="Close" movement="Still" type="Strike" defeats="Rush">
+		<clash>
+			<addAttribute id="Dexterity"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Strength"/>
+			<addConstant amount="2"/>
+			<subtractAttribute id="Stamina"/>
+			<min amount="1"/>
+		</damage>
+		<effects>
+			<OpponentTechniqueTypeCondition id="Aerial">
+			    <ClashModEffect amount="2"/>
+			</OpponentTechniqueTypeCondition>
+		</effects>
+	</technique>
+	<technique name="Side Kick" style="Taekwondo" range="Close" movement="Still" type="Strike" defeats="Aerial">
+		<clash>
+			<addAttribute id="Strength"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Strength"/>
+			<subtractAttribute id="Stamina"/>
+			<min amount="2"/>
+		</damage>
+		<effect>
+			<OpponentMovementTypeCondition id="Advance">
+			    <DamageModEffect amount="1"/>
+			</OpponentMovementTypeCondition>
+		</effect>
+	</technique>
+	<technique name="Jumping Axe Kick" style="Taekwondo" range="Mid" movement="Advance" type="Aerial" defeats="Projectile">
+		<clash>
+			<addAttribute id="Dexterity"/>
+			<addConstant amount="-1"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Strength"/>
+			<addConstant amount="1"/>
+			<subtractAttribute id="Stamina"/>
+			<min amount="2"/>
+		</damage>
+	</technique>
+</techniques>

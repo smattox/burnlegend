@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<techniques>
+	<style name="Basic" type="Mortal"/>
+	<technique name="Basic Strike" style="Basic" range="Close" movement="Still" type="Strike" defeats="Aerial">
+		<clash>
+			<addAttribute id="Dexterity"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Strength"/>
+			<subtractAttribute id="Stamina"/>
+			<min amount="1"/>
+		</damage>
+	</technique>
+	<technique name="Aerial Strike" style="Basic" range="Mid" movement="Advance" type="Aerial" defeats="Projectile">
+		<clash>
+			<addAttribute id="Dexterity"/>
+			<addConstant amount="-1"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Strength"/>
+			<addConstant amount="1"/>
+			<subtractAttribute id="Stamina"/>
+			<min amount="1"/>
+		</damage>
+	</technique>
+	<technique name="Rush" style="Basic" range="Mid" movement="Advance" type="Rush" defeats="Strike">
+		<clash>
+			<addAttribute id="Dexterity"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Strength"/>
+			<addConstant amount="1"/>
+			<subtractAttribute id="Stamina"/>
+			<min amount="1"/>
+		</damage>
+	</technique>
+	<technique name="Grapple" style="Basic" range="Close" movement="Still" type="Grapple" defeats="Defensive">
+		<clash>
+			<addAttribute id="Strength"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Strength"/>
+			<subtractAttribute id="Strength"/>
+			<min amount="1"/>
+		</damage>
+	</technique>
+	<technique name="Block" style="Basic" range="Mid" movement="Still" type="Defensive" defeats="Strike">
+		<clash>
+			<addAttribute id="Stamina"/>
+			<addTechnique/>
+		</clash>
+		<option label="Movement?">
+			<BackMovementOption/>
+			<StillMovementOption/>
+		</option>
+		<option label="On hit, restore what?">
+			<EffectOption>
+			    <OnVictoryCondition>
+			        <ModTraitEffect id="Health" amount="2"/>
+			    </OnVictoryCondition>
+			</EffectOption>
+			<EffectOption>
+			    <OnVictoryCondition>
+			        <ModTraitEffect id="Ki" amount="2"/>
+			    </OnVictoryCondition>
+			</EffectOption>
+		</option>
+		<tag id="Counterattack"/>
+	</technique>
+</techniques>

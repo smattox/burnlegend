@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<techniques>
+	<style name="Akuma Techniques" type="Akuma"/>
+	<technique name="Black Tide Rising" style="Akuma Techniques" range="Mid" movement="Advance" type="Strike" defeats="Aerial">
+	    <discount id="Boxing"/>
+	    <discount id="Karate"/>
+	    <KiCost amount="1"/>
+		<clash>
+			<addAttribute id="Dexterity"/>
+			<addConstant amount="2"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Strength"/>
+			<addConstant amount="1"/>
+			<subtractAttribute id="Stamina"/>
+			<min amount="1"/>
+		</damage>
+		<effects>
+		    <OnVictoryCondition>
+		        <ModTraitEffect id="Overdrive" amount="1"/>
+		    </OnVictoryCondition>
+		</effects>
+		<refinement name="Black Tide Drowning" rank="4" cost="5" exclusive="true">
+		    <effects>
+		    	<OpponentTechniqueTypeCondition id="Aerial">
+				    <RevisedDamageEffect>
+				        <addAttribute id="Strength"/>
+						<addConstant amount="1"/>
+						<min amount="1"/>
+				    </RevisedDamageEffect>
+				    <OnHitCondition>
+					    <ForcedMovementEffect movement="Still"/>    
+				    </OnHitCondition>
+				</OpponentTechniqueTypeCondition>    
+		    </effects>
+		</refinement>
+		<refinement name="Midnight Tsunami" rank="4" cost="5" exclusive="true">
+		    <effects>
+		    	<OpponentTechniqueTypeCondition id="Aerial">
+				    <ClashModEffect amount="3"/>
+				</OpponentTechniqueTypeCondition>
+				<OpponentTechniqueTypeCondition id="Rush">
+				    <ClashModEffect amount="3"/>
+				</OpponentTechniqueTypeCondition>    
+		    </effects>
+		    <upgrades>
+		        <RemoveDefeatUpgrade type="Aerial"/>
+		    </upgrades>
+		</refinement>
+	</technique>
+	<technique name="Air-Skinning Fist" style="Akuma Techniques" range="Close" movement="Still" type="Strike" defeats="Rush">
+	    <discount id="Tiger Style Kung Fu"/>
+	    <discount id="Boxing"/>
+		<KiCost amount="1"/>
+		<clash>
+			<addAttribute id="Strength"/>
+			<addConstant amount="1"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Strength"/>
+			<addConstant amount="2"/>
+			<subtractAttribute id="Stamina"/>
+			<min amount="2"/>
+		</damage>
+		<refinement name="Hell Spits Spite" rank="4" cost="6">
+		    <upgrades>
+		        <RangeUpgrade id="Mid"/>
+		    </upgrades>
+		    <tag id="MustClashProjectile"/>
+		</refinement>
+	</technique>
+	<technique name="Sky-Splitting Claw" style="Akuma Techniques" range="Close" movement="Still" type="Aerial" defeats="Aerial">
+		<discount id="Taekwondo"/>
+		<discount id="Zui Quan"/>
+		<clash>
+			<addAttribute id="Strength"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Strength"/>
+			<addConstant amount="2"/>
+			<subtractAttribute id="Stamina"/>
+			<min amount="1"/>
+		</damage>
+		<effects>
+		    <OnHitCondition>
+		        <KnockbackEffect/>
+		    </OnHitCondition>
+		</effects>
+	</technique>
+	<technique name="Hell Wind Atemi" style="Akuma Techniques" range="Mid" movement="Advance" type="Aerial" defeats="Projectile">
+		<discount id="Snake Style Kung Fu"/>
+	    <discount id="Muay Thai"/>
+		<clash>
+			<addAttribute id="Dexterity"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Strength"/>
+			<addConstant amount="2"/>
+			<subtractAttribute id="Stamina"/>
+			<min amount="1"/>
+		</damage>
+		<effects>
+		    <OnVictoryCondition>
+		        <ModTraitEffect id="Overdrive" amount="1"/>
+		    </OnVictoryCondition>
+		</effects>
+		<refinement name="Unstoppable Comet" rank="2" cost="1">
+		    <tag id="ImmuneToReversal"/>
+		</refinement>
+	</technique>
+	<technique name="Hell Spite Blast" style="Akuma Techniques" range="Mid" movement="Still" type="Projectile" defeats="Strike">
+		<discount id="Karate"/>
+		<discount id="Wing Chun"/>
+		<KiCost amount="1"/>
+		<clash>
+			<addAttribute id="Strength"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Stamina"/>
+			<addConstant amount="3"/>
+			<subtractAttribute id="Stamina"/>
+			<min amount="1"/>
+		</damage>
+		<effects>
+			<OpponentTechniqueTypeCondition id="Projectile">
+				<ClashModEffect amount="1"/>
+			</OpponentTechniqueTypeCondition>    
+		</effects>
+		 <refinement name="Hell Shot" rank="2" cost="2">
+		    <effects>
+		    	<OpponentTechniqueTypeCondition id="Projectile">
+					<ClashModEffect amount="1"/>
+				</OpponentTechniqueTypeCondition>     
+		    </effects>
+		</refinement>
+	</technique>
+	<technique name="Hell Surge Advance" style="Akuma Techniques" range="Mid" movement="Advance" type="Rush" defeats="Grapple">
+		<discount id="Brazilian Jiu-Jitsu"/>
+		<discount id="Tiger Style Kung Fu"/>
+		<clash>
+			<addAttribute id="Dexterity"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Strength"/>
+			<addConstant amount="1"/>
+			<subtractAttribute id="Stamina"/>
+			<min amount="1"/>
+		</damage>
+		<effects>
+		    <OnHitCondition>
+		        <PreventTechniqueEffect type="Strike"/>
+		    </OnHitCondition>
+		    <OnVictoryCondition>
+		        <ModTraitEffect id="Overdrive" amount="1"/>
+		    </OnVictoryCondition>
+		</effects>
+		<refinement name="Black Claw Strike" rank="3" cost="5">
+		    <upgrades>
+		        <DamageUpgrade amount="1"/>
+		    </upgrades>
+		    <option label="Knockback?">
+		        <EffectOption>
+		            <OnHitCondition>
+		            	<KnockbackEffect/>
+		            </OnHitCondition>
+		        </EffectOption>
+		    </option>
+		</refinement>
+		<refinement name="Reaping Claw" rank="5" cost="6" exclusive="true">
+		    <upgrades>
+		        <DamageUpgrade amount="2"/>
+		    </upgrades>
+		</refinement>
+	</technique>
+	<technique name="Hell Focus Combination" style="Akuma Techniques" range="Close" movement="Still" type="Rush" defeats="Strike">
+		<discount id="Snake Style Kung Fu"/>
+		<discount id="Taekwondo"/>
+		<discount id="Zui Quan"/>
+		<clash>
+			<addAttribute id="Dexterity"/>
+			<addConstant amount="1"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Dexterity"/>
+			<subtractAttribute id="Stamina"/>
+			<min amount="2"/>
+		</damage>
+		<effects>
+		    <OnHitCondition>
+		        <KnockbackEffect/>
+		        <AdditionalStaggerEffect amount="1"/>
+		    </OnHitCondition>
+		</effects>
+	</technique>
+	<technique name="Devil Fang Kanzetsuwaza" style="Akuma Techniques" range="Close" movement="Still" type="Grapple" defeats="Defensive">
+		<discount id="Brazilian Jiu-Jitsu"/>
+		<discount id="Wrestling"/>
+		<clash>
+			<addAttribute id="Strength"/>
+			<addConstant amount="1"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Strength"/>
+			<subtractAttribute id="Dexterity"/>
+			<min amount="2"/>
+		</damage>
+		<effects>
+		    <OnHitCondition>
+		        <FutureClashModEffect amount="-1" duration="2"/>
+		    </OnHitCondition>
+		</effects>
+		<refinement name="Devil-Bitten Joints" rank="2" cost="3">
+		    <effects>
+		    	<OnHitCondition>
+		        	<FutureClashModEffect amount="-1" duration="2"/>
+		    	</OnHitCondition>
+			</effects>
+		</refinement>
+	</technique>
+	<technique name="Earth-Breaking Throw" style="Akuma Techniques" range="Close" movement="Still" type="Grapple" defeats="Defensive">
+		<discount id="Karate"/>
+		<discount id="Wrestling"/>
+		<clash>
+			<addAttribute id="Dexterity"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Strength"/>
+			<addConstant amount="1"/>
+			<subtractAttribute id="Stamina"/>
+			<min amount="1"/>
+		</damage>
+		<effects>
+		    <OnHitCondition>
+		        <PreventTechniqueEffect type="Aerial"/>
+		    </OnHitCondition>
+		    <OnVictoryCondition>
+		        <ModTraitEffect id="Overdrive" amount="1"/>
+		    </OnVictoryCondition>
+		</effects>
+		<refinement name="Hell-Sealed Chakras" rank="5" cost="4">
+		    <effects>
+		    	<OnHitCondition>
+					<MustSpendWillpowerToUseKiEffect/>
+				</OnHitCondition>    
+		    </effects>
+		</refinement>
+	</technique>
+	<technique name="Laughing Devil Rebuke" style="Akuma Techniques" range="Mid" movement="Still" type="Defensive" defeats="Projectile">
+	    <discount id="Muay Thai"/>
+	    <discount id="Zui Quan"/>
+		<clash>
+			<addAttribute id="Stamina"/>
+			<addTechnique/>
+		</clash>
+		<effects>
+		    <OnVictoryCondition>
+		    	<ModTraitEffect id="Health" amount="1"/>
+		    	<ModTraitEffect id="Ki" amount="1"/>    
+		    </OnVictoryCondition>
+		    <OnHitCondition>
+		        <FutureClashModEffect amount="-2"/>
+		    </OnHitCondition>
+		    <OpponentTechniqueTypeCondition id="Projectile">
+				<RevisedDamageEffect>
+				    <addOpponentDamageFormula/>
+				</RevisedDamageEffect>
+			</OpponentTechniqueTypeCondition>
+		</effects>
+		<refinement name="Infernal Counterattack" rank="2" cost="3">
+		    <effects>
+		    	<OpponentTechniqueTypeCondition id="Projectile">
+					<DamageModEffect amount="1"/>
+				</OpponentTechniqueTypeCondition>    
+		    </effects>
+		</refinement>
+		<refinement name="Ki-Feasting Method" rank="2" cost="3">
+		    <option label="Absorb Projectiles?">
+		        <EffectOption>
+		            <OpponentTechniqueTypeCondition id="Projectile">
+		                <RemoveEffect id="RevisedDamageEffect"/>
+			            <OnVictoryCondition>
+			                <FutureClashModEffect amount="4"/>
+			            </OnVictoryCondition>
+		            </OpponentTechniqueTypeCondition>
+		        </EffectOption>
+		    </option>
+		</refinement>
+		<tag id="ImmuneToReversal"/>
+	</technique>
+	<technique name="Riding the Whirlwind" style="Akuma Techniques" range="Mid" movement="Advance" type="Defensive" defeats="Rush">
+	    <discount id="Snake Style Kung Fu"/>
+	    <discount id="Wing Chun"/>
+		<clash>
+			<addAttribute id="Dexterity"/>
+			<addConstant amount="1"/>
+			<addTechnique/>
+		</clash>
+		<option label="Movement?">
+			<AdvanceMovementOption/>
+			<BackMovementOption/>
+		</option>
+		<option label="On hit, restore what?">
+			<EffectOption>
+			    <OnVictoryCondition>
+			        <ModTraitEffect id="Health" amount="1"/>
+			    </OnVictoryCondition>
+			</EffectOption>
+			<EffectOption>
+			    <OnVictoryCondition>
+			        <ModTraitEffect id="Ki" amount="1"/>
+			    </OnVictoryCondition>
+			</EffectOption>
+		</option>
+		<effects>
+		    <OnVictoryCondition>
+		        <FutureClashModEffect amount="3"/>
+		    </OnVictoryCondition>
+		</effects>
+		<refinement name="Storm-Driven Debris Refinement" rank="3" cost="3">
+		    <effects>
+		    	<OnVictoryCondition>
+		        	<FutureClashModEffect amount="1"/>
+		    	</OnVictoryCondition>
+		    	<OpponentTechniqueTypeCondition id="Strike">
+			        <OnVictoryCondition>
+						<FutureClashModEffect amount="1"/>
+					</OnVictoryCondition>
+		    	</OpponentTechniqueTypeCondition>    
+		    </effects>
+		</refinement>
+		<refinement name="By Whispers Nourished" rank="2" cost="3">
+		    <effects>
+		    	<OnVictoryCondition>
+		        	<ModTraitEffect id="Overdrive" amount="1"/>
+		    	</OnVictoryCondition>    
+		    </effects>
+		</refinement>
+	</technique>
+	<technique name="Raging Gale" style="Akuma Techniques" range="Close" movement="Still" type="Strike" defeats="Rush,Aerial">
+		<KiCost amount="2"/>
+		<clash>
+			<addAttribute id="Strength"/>
+			<addConstant amount="5"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Stamina"/>
+			<addConstant amount="3"/>
+			<subtractAttribute id="Dexterity"/>
+			<min amount="2"/>
+		</damage>
+		<tag id="DestroyHealthStock"/>
+		<tag id="Overdrive"/>
+	</technique>
+	<technique name="Devil Riot" style="Akuma Techniques" range="Mid" movement="Still" type="Defensive" defeats="Grapple">
+	    <KiCost amount="2"/>
+		<clash>
+			<addAttribute id="Stamina"/>
+			<addConstant amount="4"/>
+			<addTechnique/>
+		</clash>
+		<effects>
+		    <OnVictoryCondition>
+		    	<TimedAttributeBuffEffect id="Strength" amount="5" duration="4"/>
+		    	<TimedAttributeBuffEffect id="Dexterity" amount="5" duration="4"/> 
+		    </OnVictoryCondition>
+		</effects>
+		<tag id="Overdrive"/>
+	</technique>
+</techniques>

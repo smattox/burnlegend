@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<techniques>
+	<style name="Wood Dragon Style" type="Ryuujin" subtype="Wood"/>
+	<technique name="Wrath of the Living Elements" style="Wood Dragon Style" range="Mid" movement="Still" type="Strike" defeats="Strike,Grapple">
+		<KiCost amount="2"/>
+		<clash>
+			<addAttribute id="Stamina"/>
+			<addConstant amount="2"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Strength"/>
+			<addConstant amount="5"/>
+			<subtractAttribute id="Stamina"/>
+			<min amount="1"/>
+		</damage>
+		<effects>
+		    <OnHitCondition>
+		        <KnockbackEffect/>
+		    </OnHitCondition>
+		</effects>
+		<tag id="DestroyHealthStock"/>
+		<tag id="Overdrive"/>
+	</technique>
+	<technique name="Five-Dragon Fusion Method" style="Wood Dragon Style" range="Mid" movement="Still" type="Defensive" defeats="Projectile">
+		<KiCost amount="2"/>
+		<clash>
+			<addAttribute id="Stamina"/>
+			<addConstant amount="2"/>
+			<addTechnique/>
+		</clash>
+		<effects>
+		    <OnVictoryCondition>
+		        <HealthStockInfiniteKiEffect/>
+		    </OnVictoryCondition>
+		</effects>
+		<tag id="Overdrive"/>
+	</technique>
+</techniques>

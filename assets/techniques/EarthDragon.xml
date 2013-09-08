@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<techniques>
+	<style name="Earth Dragon Style" type="Ryuujin" subtype="Earth"/>
+	<technique name="Whistling Stone Atemi" style="Earth Dragon Style" range="Close" movement="Still" type="Strike" defeats="Grapple">
+		<clash>
+			<addAttribute id="Dexterity"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Strength"/>
+			<addConstant amount="1"/>
+			<subtractAttribute id="Stamina"/>
+			<min amount="1"/>
+		</damage>
+		<tag id="EarthBinding"/>
+	</technique>
+	<technique name="Steel Avalanche Strike" style="Earth Dragon Style" range="Close" movement="Still" type="Strike" defeats="Aerial">
+		<KiCost amount="1"/>
+		<clash>
+			<addAttribute id="Stamina"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Stamina"/>
+			<addConstant amount="3"/>
+			<subtractAttribute id="Stamina"/>
+			<min amount="1"/>
+		</damage>
+		<option label="Movement?">
+			<BackMovementOption/>
+			<StillMovementOption/>
+		</option>
+		<tag id="MetalBinding"/>
+	</technique>
+	<technique name="Exploding Earth Technique" style="Earth Dragon Style" range="Mid" movement="Still" type="Projectile" defeats="Rush">
+		<KiCost amount="1"/>
+		<clash>
+			<addAttribute id="Strength"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Strength"/>
+			<addConstant amount="1"/>
+			<subtractAttribute id="Dexterity"/>
+			<min amount="1"/>
+		</damage>
+		<refinement name="Earthquake Step" rank="4" cost="6" exclusive="true">
+		    <tag id="AreaOfEffectClose"/>
+		</refinement>
+		<refinement name="Erupting Earth Method" rank="4" cost="5" exclusive="true">
+		    <upgrades>
+		        <DamageUpgrade amount="2"/>
+		    </upgrades>
+		</refinement>
+		<tag id="EarthBinding"/>
+	</technique>
+	<technique name="Earthshock Strike" style="Earth Dragon Style" range="Mid" movement="Advance" type="Rush" defeats="Projectile">
+		<clash>
+			<addAttribute id="Stamina"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Strength"/>
+			<addConstant amount="1"/>
+			<subtractAttribute id="Stamina"/>
+			<min amount="1"/>
+		</damage>
+		<refinement name="Earth Ward Attitude" rank="2" cost="4">
+		    <tag id="MustClashProjectile"/>
+		</refinement>
+		<tag id="EarthBinding"/>
+	</technique>
+	<technique name="Earth Dragon Fang Koshinage" style="Earth Dragon Style" range="Close" movement="Still" type="Grapple" defeats="Defensive">
+		<KiCost amount="1"/>
+		<clash>
+			<addAttribute id="Strength"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Strength"/>
+			<addConstant amount="3"/>
+			<subtractAttribute id="Stamina"/>
+			<min amount="1"/>
+		</damage>
+		<tag id="EarthBinding"/>
+	</technique>
+	<technique name="Steel Arms Restraint" style="Earth Dragon Style" range="Close" movement="Still" type="Grapple" defeats="Defensive">
+		<KiCost amount="1"/>
+		<clash>
+			<addAttribute id="Strength"/>
+			<addConstant amount="-1"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Stamina"/>
+			<subtractAttribute id="Stamina"/>
+			<min amount="1"/>
+		</damage>
+		<effects>
+		    <OnHitCondition>
+		        <StaggerCheckEffect/>
+		    </OnHitCondition>
+		</effects>
+		<tag id="MetalBinding"/>
+	</technique>
+	<technique name="Earth Scale Fortification" style="Earth Dragon Style" range="Mid" movement="Still" type="Defensive" defeats="Strike">
+		<clash>
+			<addAttribute id="Stamina"/>
+			<addConstant amount="1"/>
+			<addTechnique/>
+		</clash>
+		<option label="On hit, restore what?">
+			<EffectOption>
+			    <OnVictoryCondition>
+			        <ModTraitEffect id="Health" amount="2"/>
+			    </OnVictoryCondition>
+			</EffectOption>
+			<EffectOption>
+			    <OnVictoryCondition>
+			        <ModTraitEffect id="Ki" amount="2"/>
+			    </OnVictoryCondition>
+			</EffectOption>
+		</option>
+		<tag id="EarthBinding"/>
+		<tag id="ImmuneToReversal"/>
+	</technique>
+	<technique name="Claws of the Earth Dragon" style="Earth Dragon Style" range="Mid" movement="Still" type="Defensive">
+		<KiCost amount="1"/>
+		<clash>
+			<addAttribute id="Strength"/>
+			<addConstant amount="1"/>
+			<addTechnique/>
+		</clash>
+		<effects>
+		    <OnVictoryCondition>
+		        <HealthStockDamageBoostEffect amount="1" stacks="false"/>
+		    </OnVictoryCondition>
+		</effects>
+		<refinement name="Earthen Unity Prana" rank="1" cost="2">
+		    <effects>
+		        <RevisedClashEffect>
+		            <addMaxAttributes first="Strength" second="Stamina"/>
+		            <addConstant amount="1"/>
+					<addTechnique/>
+		        </RevisedClashEffect>
+		    </effects>
+		</refinement>
+		<tag id="EarthBinding"/>
+	</technique>
+	<technique name="Iron Claw Technique" style="Earth Dragon Style" range="Mid" movement="Still" type="Defensive">
+		<WillpowerCost amount="1"/>
+		<clash>
+			<addAttribute id="Stamina"/>
+			<addTechnique/>
+		</clash>
+		<effects>
+		    <OnVictoryCondition>
+		        <HealthStockDamageBoostEffect amount="2" stacks="false"/>
+		    </OnVictoryCondition>
+		</effects>
+		<tag id="MetalBinding"/>
+	</technique>
+	<technique name="As In The Beginning" style="Earth Dragon Style" range="Mid" movement="Still" type="Projectile" defeats="Rush">
+		<KiCost amount="1"/>
+		<clash>
+			<addAttribute id="Stamina"/>
+			<addConstant amount="1"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Strength"/>
+			<addConstant amount="2"/>
+			<subtractAttribute id="Stamina"/>
+			<min amount="2"/>
+		</damage>
+		<tag id="AreaOfEffectDistant"/>
+		<tag id="DestroyHealthStock"/>
+		<tag id="Overdrive"/>
+	</technique>
+</techniques>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<techniques>
+	<style name="Kyokushin Karate" type="Mortal"/>
+	<technique name="Rolling Axe Kick" style="Kyokushin Karate" range="Close" movement="Still" type="Strike" defeats="Grapple">
+		<clash>
+			<addAttribute id="Dexterity"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Strength"/>
+			<addConstant amount="1"/>
+			<subtractAttribute id="Dexterity"/>
+			<min amount="1"/>
+		</damage>
+		<effects>
+		    <OnHitCondition>
+		    	<FutureClashModEffect amount="-1"/>
+		    </OnHitCondition>
+		</effects>
+	</technique>
+	<technique name="Front Kick" style="Kyokushin Karate" range="Close" movement="Still" type="Strike" defeats="Rush">
+		<clash>
+			<addAttribute id="Strength"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Strength"/>
+			<subtractAttribute id="Stamina"/>
+			<min amount="1"/>
+		</damage>
+		<effects>
+		    <OpponentMovementCondition id="Advance">
+		        <ClashModEffect amount="2"/>
+		    </OpponentMovementCondition>
+		</effects>
+	</technique>
+	<technique name="Step Spear Kick" style="Kyokushin Karate" range="Mid" movement="Advance" type="Rush" defeats="Strike">
+		<clash>
+			<addAttribute id="Dexterity"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Strength"/>
+			<addConstant amount="2"/>
+			<subtractAttribute id="Stamina"/>
+			<min amount="1"/>
+		</damage>
+		<effects>
+		    <OnHitCondition>
+		    	<KnockbackEffect/>
+		    </OnHitCondition>
+		</effects>
+	</technique>
+</techniques>

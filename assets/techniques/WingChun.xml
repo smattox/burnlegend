@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<techniques>
+	<style name="Wing Chun" type="Mortal"/>
+	<technique name="One-Inch Punch" style="Wing Chun" range="Close" movement="Still" type="Strike" defeats="Grapple">
+		<clash>
+			<addAttribute id="Dexterity"/>
+			<addConstant amount="1"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Dexterity"/>
+			<addConstant amount="2"/>
+			<subtractAttribute id="Stamina"/>
+			<min amount="1"/>
+		</damage>
+	</technique>
+	<technique name="Trapping" style="Wing Chun" range="Close" movement="Still" type="Grapple" defeats="Strike">
+		<clash>
+			<addAttribute id="Dexterity"/>
+			<addConstant amount="2"/>
+			<addTechnique/>
+		</clash>
+		<effects>
+		    <OnVictoryCondition>
+		    	<FutureClashModEffect amount="4"/>
+		    </OnVictoryCondition>
+		</effects>
+	</technique>
+	<technique name="Chi Sao" style="Wing Chun" range="Close" movement="Still" type="Defensive">
+		<clash>
+			<addAttribute id="Dexterity"/>
+			<addConstant amount="2"/>
+			<addTechnique/>
+		</clash>
+		<effects>
+		    <OnVictoryCondition>
+		        <ModTraitEffect id="Ki" amount="3"/>
+		    </OnVictoryCondition>
+		</effects>
+	</technique>
+</techniques>

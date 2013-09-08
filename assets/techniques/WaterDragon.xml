@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<techniques>
+	<style name="Water Dragon Style" type="Ryuujin" subtype="Water"/>
+	<technique name="Lashing Water Dragon Tail" style="Water Dragon Style" range="Mid" movement="Still" type="Strike" defeats="Rush">
+		<clash>
+			<addAttribute id="Dexterity"/>
+			<addConstant amount="1"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Dexterity"/>
+			<subtractAttribute id="Stamina"/>
+			<min amount="1"/>
+		</damage>
+		<option label="Is a useful water source available?">
+		    <EffectOption>
+		        <DamageModEffect amount="2"/>
+		    </EffectOption>
+		</option>
+		<refinement name="Savage Dragon Braid" rank="2" cost="4">
+		    <upgrades>
+		        <ReplaceDamageUpgrade>
+		            <addAttribute id="Dexterity"/>
+					<subtractAttribute id="Stamina"/>
+					<min amount="2"/>
+		        </ReplaceDamageUpgrade>
+		    </upgrades>
+		</refinement>
+		<tag id="WaterBinding"/>
+	</technique>
+	<technique name="Water Dragon Surge" style="Water Dragon Style" range="Mid" movement="Advance" type="Aerial" defeats="Projectile">
+		<clash>
+			<addAttribute id="Dexterity"/>
+			<addConstant amount="1"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Strength"/>
+			<addConstant amount="1"/>
+			<subtractAttribute id="Stamina"/>
+			<min amount="1"/>
+		</damage>
+		<option label="Is a useful water source available?">
+		    <EffectOption>
+		        <DamageModEffect amount="1"/>
+		    </EffectOption>
+		</option>
+		<tag id="WaterBinding"/>
+	</technique>
+	<technique name="Hailstorm Slash" style="Water Dragon Style" range="Mid" movement="Advance" type="Aerial" defeats="Projectile">
+		<KiCost amount="1"/>
+		<clash>
+			<addAttribute id="Dexterity"/>
+			<addConstant amount="1"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Strength"/>
+			<addConstant amount="1"/>
+			<subtractAttribute id="Stamina"/>
+			<min amount="2"/>
+		</damage>
+		<tag id="ImmuneToReversal"/>
+		<tag id="IceBinding"/>
+	</technique>
+	<technique name="Battering Wave Kata" style="Water Dragon Style" range="Mid" movement="Still" type="Projectile" defeats="Defensive">
+		<KiCost amount="1"/>
+		<clash>
+			<addAttribute id="Dexterity"/>
+			<addConstant amount="2"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Dexterity"/>
+			<subtractAttribute id="Strength"/>
+			<min amount="1"/>
+		</damage>
+		<option label="Is a useful water source available?">
+		    <EffectOption>
+		        <DamageModEffect amount="2"/>
+		    </EffectOption>
+		</option>
+		<refinement name="Crashing Tsunami Force" rank="3" cost="5">
+		    <effects>
+		    	<OpponentTechniqueTypeCondition id="Defensive">
+		    	    <RevisedDamageEffect>
+		    	        <addAttribute id="Dexterity"/>
+						<min amount="1"/>
+		    	    </RevisedDamageEffect>
+		    	</OpponentTechniqueTypeCondition>
+		    </effects>
+		</refinement>
+		<tag id="WaterBinding"/>
+	</technique>
+	<technique name="Dragon Spiral Strike" style="Water Dragon Style" range="Mid" movement="Advance" type="Rush" defeats="Strike">
+		<KiCost amount="1"/>
+		<clash>
+			<addAttribute id="Dexterity"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Dexterity"/>
+			<addConstant amount="2"/>
+			<subtractAttribute id="Stamina"/>
+			<min amount="1"/>
+		</damage>
+		<option label="Is a useful water source available?">
+		    <EffectOption>
+		        <DamageModEffect amount="2"/>
+		    </EffectOption>
+		</option>
+		<tag id="WaterBinding"/>
+	</technique>
+	<technique name="Slide Sweep" style="Water Dragon Style" range="Mid" movement="Advance" type="Rush" defeats="Grapple">
+		<clash>
+			<addAttribute id="Dexterity"/>
+			<addConstant amount="1"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Dexterity"/>
+			<addConstant amount="1"/>
+			<subtractAttribute id="Stamina"/>
+			<min amount="1"/>
+		</damage>
+		<effects>
+		    <OnHitCondition>
+		        <FutureClashModEffect amount="2"/>
+		    </OnHitCondition>
+		</effects>
+		<tag id="IceBinding"/>
+	</technique>
+	<technique name="Drowning Depths Kata" style="Water Dragon Style" range="Close" movement="Still" type="Grapple" defeats="Defensive">
+		<clash>
+			<addAttribute id="Dexterity"/>
+			<addConstant amount="1"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Dexterity"/>
+			<subtractAttribute id="Dexterity"/>
+			<min amount="1"/>
+		</damage>
+		<option label="Is a useful water source available?">
+		    <EffectOption>
+		        <ClashModEffect amount="2"/>
+		    </EffectOption>
+		</option>
+		<effects>
+		    <OnHitCondition>
+		        <FutureClashModEffect amount="2"/>
+		    </OnHitCondition>
+		</effects>
+		<tag id="WaterBinding"/>
+	</technique>
+	<technique name="Blood Binding Kata" style="Water Dragon Style" range="Close" movement="Still" type="Grapple" defeats="Strike">
+		<KiCost amount="1"/>
+		<clash>
+			<addAttribute id="Stamina"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Strength"/>
+			<subtractAttribute id="Dexterity"/>
+			<min amount="1"/>
+		</damage>
+		<effects>
+		    <OnHitCondition>
+		        <StaggerCheckEffect/>
+		    </OnHitCondition>
+		</effects>
+		<tag id="IceBinding"/>
+	</technique>
+	<technique name="Shining Ice Guardian" style="Water Dragon Style" range="Mid" movement="Still" type="Defensive" defeats="Aerial">
+		<clash>
+			<addAttribute id="Dexterity"/>
+			<addConstant amount="1"/>
+			<addTechnique/>
+		</clash>
+		<option label="Movement?">
+			<BackMovementOption/>
+			<StillMovementOption/>
+		</option>
+		<effects>
+		    <OnVictoryCondition>
+		        <ModTraitEffect id="Health" amount="2"/>
+		        <ModTraitEffect id="Ki" amount="1"/>
+		    </OnVictoryCondition>
+		</effects>
+		<tag id="IceBinding"/>
+	</technique>
+	<technique name="Sea-Tossed Storm Method" style="Water Dragon Style" range="Close" movement="Still" type="Strike" defeats="Rush,Aerial">
+		<KiCost amount="1"/>
+		<clash>
+			<addAttribute id="Dexterity"/>
+			<addConstant amount="4"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Dexterity"/>
+			<subtractAttribute id="Stamina"/>
+			<min amount="1"/>
+		</damage>
+		<tag id="AreaOfEffectClose"/>
+		<tag id="DestroyHealthStock"/>
+		<tag id="Overdrive"/>
+	</technique>
+</techniques>

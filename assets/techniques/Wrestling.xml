@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<techniques>
+	<style name="Wrestling" type="Mortal"/>
+	<technique name="Clothesline" style="Wrestling" range="Mid" movement="Advance" type="Rush" defeats="Rush">
+		<clash>
+			<addAttribute id="Strength"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Strength"/>
+			<addConstant amount="1"/>
+			<subtractAttribute id="Stamina"/>
+			<min amount="1"/>
+		</damage>
+		<effects>
+		    <OnHitCondition>
+		        <PreventTechniqueEffect movement="Advance"/>
+		        <PreventTechniqueEffect movement="Back"/>
+		    </OnHitCondition>
+		</effects>
+	</technique>
+	<technique name="Piledriver" style="Wrestling" range="Close" movement="Still" type="Grapple" defeats="Defensive">
+		<clash>
+			<addAttribute id="Strength"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Strength"/>
+			<addConstant amount="2"/>
+			<subtractAttribute id="Stamina"/>
+			<min amount="2"/>
+		</damage>
+		<effects>
+		    <OnHitCondition>
+		        <FutureClashModEffect amount="-1" duration="2"/>
+		    </OnHitCondition>
+		</effects>
+	</technique>
+	<technique name="Powerbomb" style="Wrestling" range="Close" movement="Still" type="Grapple" defeats="Aerial">
+		<clash>
+			<addAttribute id="Strength"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Strength"/>
+			<addConstant amount="2"/>
+			<subtractAttribute id="Stamina"/>
+			<min amount="1"/>
+		</damage>
+		<effects>
+		    <OnHitCondition>
+		        <AdditionalStaggerEffect amount="1"/>
+		    </OnHitCondition>
+		</effects>
+	</technique>
+</techniques>

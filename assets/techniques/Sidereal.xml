@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<techniques>
+	<style name="Sidereal Techniques" type="Tennin"/>
+	<technique name="Bridge of the Waking Dream" style="Sidereal Techniques" range="Close" movement="Still" type="Strike" defeats="Rush">
+		<clash>
+			<addAttribute id="Dexterity"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Strength"/>
+			<addConstant amount="1"/>
+			<subtractAttribute id="Stamina"/>
+			<min amount="1"/>
+		</damage>
+		<effects>
+		    <OnHitCondition>
+		        <BlockSpendKiEffect/>
+		    </OnHitCondition>
+		</effects>
+		<tag id="Terrestrial"/>
+	</technique>
+	<technique name="Bridge of the Jade Harmony" style="Sidereal Techniques" range="Close" movement="Still" type="Strike" defeats="Rush">
+		<clash>
+			<addAttribute id="Stamina"/>
+			<addConstant amount="2"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Strength"/>
+			<subtractAttribute id="Stamina"/>
+			<min amount="2"/>
+		</damage>
+		<effects>
+		    <OnHitCondition>
+		        <StealTraitEffect id="Ki" amount="2"/>
+		    </OnHitCondition>
+		</effects>
+		<tag id="Celestial"/>
+	</technique>
+	<technique name="Bridge of the Scarlet Phoenix" style="Sidereal Techniques" range="Close" movement="Still" type="Strike" defeats="Aerial">
+		<KiCost amount="1"/>
+		<clash>
+			<addAttribute id="Strength"/>
+			<addConstant amount="4"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Dexterity"/>
+			<addConstant amount="3"/>
+			<subtractAttribute id="Stamina"/>
+			<min amount="2"/>
+		</damage>
+		<tag id="Sidereal"/>
+		<tag id="ImmuneToReversal"/>
+	</technique>
+	<technique name="Bridge of the Mirror" style="Sidereal Techniques" range="Mid" movement="Advance" type="Aerial" defeats="Aerial">
+		<clash>
+			<addAttribute id="Dexterity"/>
+			<addConstant amount="1"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Dexterity"/>
+			<addConstant amount="2"/>
+			<subtractAttribute id="Stamina"/>
+			<min amount="1"/>
+		</damage>
+		<tag id="Terrestrial"/>
+	</technique>
+	<technique name="Prayer Binding" style="Sidereal Techniques" range="Mid" movement="Still" type="Projectile" defeats="Defensive">
+	    <KiCost amount="1"/>
+		<clash>
+			<addAttribute id="Dexterity"/>
+			<addConstant amount="1"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Stamina"/>
+			<subtractAttribute id="Dexterity"/>
+			<min amount="2"/>
+		</damage>
+		<effects>
+			<OnHitCondition>
+			    <ForcedMovementEffect movement="Still"/>
+			</OnHitCondition>
+		</effects>
+		<refinement name="Threefold Prayer Binding" rank="1" cost="3">
+		    <effects>
+		    	<FollowsTagCondition id="Terrestrial">
+		    	    <OnHitCondition>
+		    	        <FutureClashModEffect amount="2"/>
+		    	    </OnHitCondition>
+		    	</FollowsTagCondition>    	  
+		    </effects>
+		</refinement>
+		<refinement name="Eightfold Prayer Binding" rank="3" cost="3" prerequisite="Threefold Prayer Binding">
+		    <effects>
+		    	<FollowsTagCondition id="Celestial">
+		    	    <OnHitCondition>
+		    	        <DamageModEffect amount="2"/>
+		    	        <FutureClashModEffect amount="2"/>
+		    	    </OnHitCondition>
+		    	</FollowsTagCondition>    	  
+		    </effects>
+		</refinement>
+		<refinement name="Thousandfold Prayer Binding" rank="5" cost="3" prerequisite="Eightfold Prayer Binding">
+		    <effects>
+		    	<FollowsTagCondition id="Sidereal">
+		    	    <OnHitCondition>
+		    	        <DamageModEffect amount="2"/>
+		    	        <FutureClashModEffect amount="2"/>
+		    	        <StaggerCheckEffect/>
+		    	    </OnHitCondition>
+		    	</FollowsTagCondition>    	  
+		    </effects>
+		</refinement>
+	</technique>
+	<technique name="Bridge of the Dragon Emperor" style="Sidereal Techniques" range="Mid" movement="Still" type="Projectile" defeats="Rush">
+		<KiCost amount="1"/>
+		<clash>
+			<addAttribute id="Stamina"/>
+			<addConstant amount="3"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Stamina"/>
+			<addConstant amount="3"/>
+			<subtractAttribute id="Strength"/>
+			<min amount="3"/>
+		</damage>
+		<effects>
+			<OnHitCondition>
+			    <NextRestoreBlockedEffect/>
+			</OnHitCondition>
+		</effects>
+		<tag id="Sidereal"/>
+	</technique>
+	<technique name="Bridge of the Black Serpent" style="Sidereal Techniques" range="Mid" movement="Advance" type="Rush" defeats="Grapple">
+		<KiCost amount="1"/>
+		<clash>
+			<addAttribute id="Dexterity"/>
+			<addConstant amount="1"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Stamina"/>
+			<addConstant amount="2"/>
+			<subtractAttribute id="Strength"/>
+			<min amount="2"/>
+		</damage>
+		<effects>
+			<OnHitCondition>
+		    	<SerpentKiEffect/>
+			</OnHitCondition>   
+		</effects>
+		<tag id="Celestial"/>
+	</technique>
+	<technique name="Bridge of the Devil Fighter" style="Sidereal Techniques" range="Mid" movement="Advance" type="Rush" defeats="Defensive">
+		<clash>
+			<addAttribute id="Dexterity"/>
+			<addConstant amount="5"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Strength"/>
+			<addConstant amount="1"/>
+			<subtractAttribute id="Stamina"/>
+			<min amount="1"/>
+		</damage>
+		<effects>
+		    <OnHitCondition>
+				<StaggerEffect/>
+			</OnHitCondition>
+		</effects>
+		<tag id="Sidereal"/>
+		<tag id="ImmuneToReversal"/>
+	</technique>
+	<technique name="Bridge of the Celestial Gods" style="Sidereal Techniques" range="Close" movement="Still" type="Grapple" defeats="Strike">
+		<clash>
+			<addAttribute id="Strength"/>
+			<addConstant amount="3"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Stamina"/>
+			<subtractAttribute id="Strength"/>
+			<min amount="2"/>
+		</damage>
+		<effects>
+		    <OnHitCondition>
+		        <NextClashNoAttributeEffect/>
+		    </OnHitCondition>
+		</effects>
+		<tag id="Celestial"/>
+	</technique>
+	<technique name="Bridge of the Resilient Cat" style="Sidereal Techniques" range="Mid" movement="Still" type="Defensive" defeats="Projectile">
+		<clash>
+			<addAttribute id="Dexterity"/>
+			<addConstant amount="2"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Strength"/>
+			<subtractAttribute id="Stamina"/>
+			<min amount="1"/>
+		</damage>
+		<option label="Movement?">
+			<StillMovementOption/>
+			<BackMovementOption/>
+		</option>
+		<effects>
+		    <OnVictoryCondition>
+		        <NoRepeatTechniqueEffect/>
+		    </OnVictoryCondition>
+		</effects>
+		<tag id="Counterattack"/>
+		<tag id="Terrestrial"/>
+	</technique>
+	<technique name="Devil Judgement Art" style="Sidereal Techniques" range="Close" movement="Still" type="Strike" defeats="Grapple">
+	    <KiCost amount="1"/>
+		<clash>
+			<addAttribute id="Dexterity"/>
+			<addConstant amount="3"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Dexterity"/>
+			<addConstant amount="3"/>
+			<subtractAttribute id="Stamina"/>
+			<min amount="2"/>
+		</damage>
+		<effects>
+			<FollowsTagCondition id="Sidereal">
+		    	<RevisedDamageEffect>
+		    	    <addAttribute id="Dexterity"/>
+					<addConstant amount="3"/>
+					<subtractAttribute id="Stamina"/>
+					<DevilJudgementMin/>
+		    	</RevisedDamageEffect>
+			</FollowsTagCondition>    	  
+		</effects>
+		<tag id="DestroyHealthStock"/>
+		<tag id="Overdrive"/>
+	</technique>
+</techniques>

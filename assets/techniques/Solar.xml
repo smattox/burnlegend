@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<techniques>
+	<style name="Solar Techniques" type="Mugen"/>
+	<technique name="Burning Corona Strike" style="Solar Techniques" range="Close" movement="Still" type="Strike" defeats="Aerial">
+	    <discount id="Karate"/>
+	    <KiCost amount="1"/>
+		<clash>
+			<addAttribute id="Dexterity"/>
+			<addConstant amount="2"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Strength"/>
+			<addConstant amount="1"/>
+			<subtractAttribute id="Stamina"/>
+			<min amount="1"/>
+		</damage>
+		<effects>
+		    <OnVictoryCondition>
+		        <ModTraitEffect id="Overdrive" amount="1"/>
+		    </OnVictoryCondition>
+		</effects>
+		<refinement name="Sunfire Eruption" rank="4" cost="5" exclusive="true">
+		    <effects>
+		    	<OpponentTechniqueTypeCondition id="Aerial">
+				    <RevisedDamageEffect>
+				        <addAttribute id="Strength"/>
+						<addConstant amount="1"/>
+						<min amount="1"/>
+				    </RevisedDamageEffect>
+				    <OnHitCondition>
+				    	<KnockbackEffect/>
+				    </OnHitCondition>
+				</OpponentTechniqueTypeCondition>    
+		    </effects>
+		</refinement>
+		<refinement name="Burning Heaven Spear" rank="4" cost="5" exclusive="true">
+		    <effects>
+		    	<OpponentDamageModEffect amount="1"/>
+		    </effects>
+		    <upgrades>
+		        <ClashUpgrade amount="2"/>
+		    </upgrades>
+		</refinement>
+		<tag id="ImmuneToReversal"/>
+	</technique>
+	<technique name="Earth-Splitting Fist" style="Solar Techniques" range="Close" movement="Still" type="Strike" defeats="Rush">
+	    <discount id="Tiger Style Kung Fu"/>
+	    <discount id="Boxing"/>
+	    <KiCost amount="1"/>
+		<clash>
+			<addAttribute id="Strength"/>
+			<addConstant amount="1"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Strength"/>
+			<addConstant amount="2"/>
+			<subtractAttribute id="Stamina"/>
+			<min amount="2"/>
+		</damage>
+		<refinement name="Earth Swallows Lightning" rank="4" cost="6">
+		    <upgrades>
+		    	<RangeUpgrade id="Mid"/>    
+		    </upgrades>
+		    <tag id="MustClashProjectile"/>
+		</refinement>
+	</technique>
+	<technique name="Roaring Flare Kick" style="Solar Techniques" range="Close" movement="Still" type="Aerial" defeats="Aerial">
+		<discount id="Brazilian Jiu-Jitsu"/>
+		<discount id="Taekwondo"/>
+		<clash>
+			<addAttribute id="Strength"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Strength"/>
+			<addConstant amount="2"/>
+			<subtractAttribute id="Stamina"/>
+			<min amount="1"/>
+		</damage>
+		<effects>
+		    <OnVictoryCondition>
+		        <ModTraitEffect id="Overdrive" amount="1"/>
+		    </OnVictoryCondition>
+		</effects>
+	</technique>
+	<technique name="Falling Meteor Atemi" style="Solar Techniques" range="Mid" movement="Advance" type="Aerial" defeats="Projectile">
+	    <discount id="Tiger Style Kung Fu"/>
+	    <discount id="Muay Thai"/>
+		<clash>
+			<addAttribute id="Dexterity"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Strength"/>
+			<subtractAttribute id="Stamina"/>
+			<min amount="1"/>
+		</damage>
+		<refinement name="Unstoppable Comet" rank="2" cost="3">
+		    <effects>
+		    	<OnVictoryCondition>
+		        	<ModTraitEffect id="Overdrive" amount="1"/>
+		    	</OnVictoryCondition>    
+		    </effects>
+		</refinement>
+	</technique>
+	<technique name="Heavenly Storm" style="Solar Techniques" range="Mid" movement="Still" type="Projectile" defeats="Strike">
+	    <discount id="Karate"/>
+	    <discount id="Wing Chun"/>
+	    <KiCost amount="1"/>
+		<clash>
+			<addAttribute id="Strength"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Stamina"/>
+			<addConstant amount="3"/>
+			<subtractAttribute id="Stamina"/>
+			<min amount="1"/>
+		</damage>
+		<effects>
+			<OpponentTechniqueTypeCondition id="Projectile">
+			<ClashModEffect amount="1"/>
+		</OpponentTechniqueTypeCondition>    
+		</effects>
+		<refinement name="Solid Shot" rank="2" cost="2">
+		    <effects>
+		    	<OpponentTechniqueTypeCondition id="Projectile">
+					<ClashModEffect amount="1"/>
+				</OpponentTechniqueTypeCondition>    
+		    </effects>
+		</refinement>
+		<refinement name="Thunder Cannon" rank="5" cost="6" exclusive="true">
+		    <upgrades>
+		    	<DamageUpgrade amount="2"/>    
+		    </upgrades>
+		</refinement>
+		<refinement name="Heaven's Bullet" rank="5" cost="6" exclusive="true">
+		    <effects>
+		    	<OnVictoryCondition>
+		        	<ModTraitEffect id="Overdrive" amount="2"/>
+		    	</OnVictoryCondition>    
+		    </effects>
+		</refinement>
+	</technique>
+	<technique name="Thunderclap Rush Attack" style="Solar Techniques" range="Mid" movement="Advance" type="Rush" defeats="Grapple">
+		<discount id="Snake Style Kung Fu"/>
+		<discount id="Boxing"/>
+		<clash>
+			<addAttribute id="Dexterity"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Strength"/>
+			<addConstant amount="1"/>
+			<subtractAttribute id="Stamina"/>
+			<min amount="1"/>
+		</damage>
+		<effects>
+			<OnVictoryCondition>
+			    <ModTraitEffect id="Overdrive" amount="1"/>
+			</OnVictoryCondition>
+			<OnHitCondition>
+				<PreventTechniqueEffect type="Defensive"/>
+			</OnHitCondition>
+		</effects>
+		<refinement name="Sun Fist Strike" rank="3" cost="5">
+		    <upgrades>
+		        <DamageUpgrade amount="1"/>
+		    </upgrades>
+		    <option label="Knockback?">
+		        <EffectOption>
+		            <OnHitCondition>
+		        		<KnockbackEffect/> 
+		            </OnHitCondition>   
+		        </EffectOption>
+		    </option>
+		</refinement>
+	</technique>
+	<technique name="Iron Raptor Combination" style="Solar Techniques" range="Mid" movement="Advance" type="Rush" defeats="Strike">
+	    <discount id="Snake Style Kung Fu"/>
+	    <discount id="Taekwondo"/>
+	    <discount id="Zui Quan"/>
+		<clash>
+			<addAttribute id="Dexterity"/>
+			<addConstant amount="1"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Dexterity"/>
+			<subtractAttribute id="Stamina"/>
+			<min amount="2"/>
+		</damage>
+		<effects>
+			<OnHitCondition>
+		    	<AdditionalStaggerEffect amount="1"/>
+			</OnHitCondition>   
+		</effects>
+	</technique>
+	<technique name="Dragon Coil Kanzetsuwaza" style="Solar Techniques" range="Close" movement="Still" type="Grapple" defeats="Defensive">
+	    <discount id="Brazilian Jiu-Jitsu"/>
+	    <discount id="Wrestling"/>
+		<clash>
+			<addAttribute id="Strength"/>
+			<addConstant amount="1"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Strength"/>
+			<subtractAttribute id="Dexterity"/>
+			<min amount="2"/>
+		</damage>
+		<effects>
+		    <OnHitCondition>
+				<FutureClashModEffect amount="-1" duration="2"/>
+			</OnHitCondition>
+		</effects>
+		<refinement name="Sun-Seared Joints" rank="2" cost="3">
+		    <effects>
+			    <OnHitCondition>
+					<FutureClashModEffect amount="-1" duration="2"/>
+				</OnHitCondition>    
+		    </effects>    
+		</refinement>
+	</technique>
+	<technique name="Crashing Wave Throw" style="Solar Techniques" range="Close" movement="Still" type="Grapple" defeats="Defensive">
+		<clash>
+			<addAttribute id="Dexterity"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Strength"/>
+			<addConstant amount="1"/>
+			<subtractAttribute id="Stamina"/>
+			<min amount="1"/>
+		</damage>
+		<effects>
+		    <OnVictoryCondition>
+			    <ModTraitEffect id="Overdrive" amount="1"/>
+			</OnVictoryCondition>
+		    <OnHitCondition>
+		        <PreventTechniqueEffect type="Aerial"/>
+		        <KnockbackEffect/>
+		    </OnHitCondition>
+		</effects>
+		<refinement name="Storm-Tossed Chakras" rank="5" cost="4">
+		    <effects>
+		    	<OnHitCondition>
+					<MustSpendWillpowerToUseKiEffect/>
+				</OnHitCondition>    
+		    </effects>
+		</refinement>
+	</technique>
+	<technique name="Break The Storm" style="Solar Techniques" range="Mid" movement="Still" type="Defensive" defeats="Projectile">
+	    <discount id="Muay Thai"/>
+		<clash>
+			<addAttribute id="Stamina"/>
+			<addTechnique/>
+		</clash>
+		<effects>
+		    <OnVictoryCondition>
+		    	<ModTraitEffect id="Health" amount="1"/>
+		    	<ModTraitEffect id="Ki" amount="1"/>    
+		    </OnVictoryCondition>
+		    <OnHitCondition>
+		        <FutureClashModEffect amount="-2"/>
+		    </OnHitCondition>
+		    <OpponentTechniqueTypeCondition id="Projectile">
+				<RevisedDamageEffect>
+				    <addOpponentDamageFormula/>
+				</RevisedDamageEffect>
+			</OpponentTechniqueTypeCondition>
+		</effects>
+		<refinement name="Solar Counterattack" rank="2" cost="3">
+		    <effects>
+		    	<OpponentTechniqueTypeCondition id="Projectile">
+					<DamageModEffect amount="1"/>
+				</OpponentTechniqueTypeCondition>    
+		    </effects>
+		</refinement>
+		<refinement name="Sun-Eating Method" rank="2" cost="3">
+		    <option label="Absorb Projectiles?">
+		        <EffectOption>
+		            <OpponentTechniqueTypeCondition id="Projectile">
+		                <RevisedDamageEffect/>
+			            <OnVictoryCondition>
+			                <FutureClashModEffect amount="4"/>
+			            </OnVictoryCondition>
+		            </OpponentTechniqueTypeCondition>
+		        </EffectOption>
+		    </option>
+		</refinement>
+		<tag id="ImmuneToReversal"/>
+	</technique>
+	<technique name="Reed in the Wind" style="Solar Techniques" range="Mid" movement="Advance" type="Defensive" defeats="Rush">
+	    <discount id="Snake Style Kung Fu"/>
+	    <discount id="Wing Chun"/>
+	    <discount id="Zui Quan"/>
+		<clash>
+			<addAttribute id="Dexterity"/>
+			<addConstant amount="1"/>
+			<addTechnique/>
+		</clash>
+		<option label="Movement?">
+			<AdvanceMovementOption/>
+			<BackMovementOption/>
+		</option>
+		<option label="On hit, restore what?">
+			<EffectOption>
+			    <OnVictoryCondition>
+			        <ModTraitEffect id="Health" amount="1"/>
+			    </OnVictoryCondition>
+			</EffectOption>
+			<EffectOption>
+			    <OnVictoryCondition>
+			        <ModTraitEffect id="Ki" amount="1"/>
+			    </OnVictoryCondition>
+			</EffectOption>
+		</option>
+		<effects>
+		    <OnVictoryCondition>
+		        <FutureClashModEffect amount="3"/>
+		    </OnVictoryCondition>
+		</effects>
+		<refinement name="Grass Before the Storm" rank="3" cost="3">
+		    <effects>
+		    	<OnVictoryCondition>
+		        	<FutureClashModEffect amount="1"/>
+		    	</OnVictoryCondition>
+		    	<OpponentTechniqueTypeCondition id="Strike">
+			        <OnVictoryCondition>
+						<FutureClashModEffect amount="1"/>
+					</OnVictoryCondition>
+		    	</OpponentTechniqueTypeCondition>    
+		    </effects>
+		</refinement>
+		<refinement name="Drinking the Storm" rank="2" cost="3">
+		    <effects>
+		    	<OnVictoryCondition>
+		        	<ModTraitEffect id="Overdrive" amount="1"/>
+		    	</OnVictoryCondition>    
+		    </effects>
+		</refinement>
+	</technique>
+	<technique name="Heavenly Destroyer Blast" style="Solar Techniques" range="Mid" movement="Still" type="Projectile" defeats="Rush,Defensive">
+	    <KiCost amount="2"/>
+		<clash>
+			<addAttribute id="Strength"/>
+			<addConstant amount="1"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Stamina"/>
+			<addConstant amount="6"/>
+			<subtractAttribute id="Dexterity"/>
+			<min amount="1"/>
+		</damage>
+		<tag id="DestroyHealthStock"/>
+		<tag id="Overdrive"/>
+	</technique>
+	<technique name="Heaven Thunder Hammer" style="Solar Techniques" range="Close" movement="Still" type="Strike" defeats="Rush,Grapple">
+	    <KiCost amount="1"/>
+		<clash>
+			<addAttribute id="Strength"/>
+			<addConstant amount="3"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Strength"/>
+			<addConstant amount="3"/>
+			<subtractAttribute id="Stamina"/>
+			<min amount="2"/>
+		</damage>
+		<effects>
+		    <OnHitCondition>
+		        <KnockbackEffect/>
+		        <StaggerCheckEffect/>
+		    </OnHitCondition>
+		</effects>
+		<tag id="DestroyHealthStock"/>
+		<tag id="Overdrive"/>
+	</technique>
+</techniques>

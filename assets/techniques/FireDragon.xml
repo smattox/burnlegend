@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<techniques>
+	<style name="Fire Dragon Style" type="Ryuujin" subtype="Fire"/>
+	<technique name="Fire Dragon Fist" style="Fire Dragon Style" range="Mid" movement="Still" type="Strike" defeats="Grapple">
+		<KiCost amount="1"/>
+		<clash>
+			<addAttribute id="Dexterity"/>
+			<addConstant amount="1"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Strength"/>
+			<addConstant amount="2"/>
+			<subtractAttribute id="Dexterity"/>
+			<min amount="1"/>
+		</damage>
+		<refinement name="Fire Kata Mastery" rank="5" cost="7">
+		    <effects>
+		    	<OnNearCondition range="Near">
+					<ClashModEffect amount="1"/>
+				</OnNearCondition>     
+		    </effects>
+		</refinement>
+		<tag id="FireBinding"/>
+	</technique>
+	<technique name="Inferno Kick" style="Fire Dragon Style" range="Close" movement="Still" type="Strike" defeats="Strike">
+		<KiCost amount="1"/>
+		<clash>
+			<addAttribute id="Dexterity"/>
+			<addConstant amount="2"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Strength"/>
+			<subtractAttribute id="Stamina"/>
+			<min amount="1"/>
+		</damage>
+		<refinement name="Ring of Fire" rank="4" cost="6">
+		    <tag id="AreaOfEffectClose"/>
+		</refinement>
+		<tag id="FireBinding"/>
+	</technique>
+	<technique name="Breath of the Fire Dragon" style="Fire Dragon Style" range="Mid" movement="Still" type="Projectile" defeats="Rush">
+		<clash>
+			<addAttribute id="Stamina"/>
+			<addConstant amount="1"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Strength"/>
+			<addConstant amount="1"/>
+			<subtractAttribute id="Dexterity"/>
+			<min amount="2"/>
+		</damage>
+		<option label="Cost?">
+		    <WillpowerCostOption amount="1"/>
+		    <KiCostOption amount="1"/>
+		</option>
+		<tag id="FireBinding"/>
+	</technique>
+	<technique name="Smoke Follows Fire" style="Fire Dragon Style" range="Mid" movement="Still" type="Projectile" defeats="Rush">
+		<clash>
+			<addAttribute id="Dexterity"/>
+			<addConstant amount="1"/>
+			<addTechnique/>
+		</clash>
+		<effects>
+		    <OnHitCondition>
+		        <FutureClashModEffect amount="-4"/>
+		    </OnHitCondition>
+		</effects>
+		<option label="Movement?">
+			<BackMovementOption/>
+			<StillMovementOption/>
+		</option>
+		<refinement name="Clinging Shadows" rank="2" cost="3">
+		    <effects>
+		    	<OnVictoryCondition>
+		        	<NextRoundTagEffect id="MustClashProjectile"/>
+		    	</OnVictoryCondition>   
+		    </effects>
+		</refinement>
+		<tag id="ShadowBinding"/>
+	</technique>
+	<technique name="Lashing Dragon Tail Technique" style="Fire Dragon Style" range="Mid" movement="Advance" type="Aerial" defeats="Projectile">
+		<KiCost amount="1"/>
+		<clash>
+			<addAttribute id="Dexterity"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Strength"/>
+			<addConstant amount="1"/>
+			<subtractAttribute id="Stamina"/>
+			<min amount="1"/>
+		</damage>
+		<effects>
+		    <OnHitCondition>
+		        <FutureClashModEffect amount="-2"/>
+		    </OnHitCondition>
+		</effects>
+		<refinement name="Double Lash Technique" rank="3" cost="5">
+		    <effects>
+		    <AttackerLastTechniqueCondition id="Lashing Dragon Tail Technique">
+		        <RevisedDamageEffect>
+		            <addAttribute id="Strength"/>
+					<addConstant amount="2"/>
+					<min amount="3"/>
+		        </RevisedDamageEffect>
+		    </AttackerLastTechniqueCondition>
+		</effects>
+		</refinement>
+		<tag id="FireBinding"/>
+	</technique>
+	<technique name="Earth-Scorching Volcano Strike" style="Fire Dragon Style" range="Mid" movement="Advance" type="Rush" defeats="Aerial">
+		<KiCost amount="1"/>
+		<clash>
+			<addAttribute id="Dexterity"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Strength"/>
+			<addConstant amount="3"/>
+			<subtractAttribute id="Dexterity"/>
+			<min amount="1"/>
+		</damage>
+		<tag id="ImmuneToReversal"/>
+		<tag id="FireBinding"/>
+	</technique>
+	<technique name="Flame-Chased Image Assault" style="Fire Dragon Style" range="Mid" movement="Still" type="Rush" defeats="Grapple">
+		<KiCost amount="1"/>
+		<clash>
+			<addAttribute id="Dexterity"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Dexterity"/>
+			<subtractAttribute id="Dexterity"/>
+			<min amount="1"/>
+		</damage>
+		<effects>
+		    <OnDistantCondition>
+		        <OnEnemyVictoryCondition>
+		            <CapDamageEffect amount="2"/>
+		   		</OnEnemyVictoryCondition>
+		    </OnDistantCondition>
+		</effects>
+		<tag id="AlwaysNear"/>
+		<tag id="ShadowBinding"/>
+	</technique>
+	<technique name="Dragon Nest Slam" style="Fire Dragon Style" range="Close" movement="Still" type="Grapple" defeats="Defensive">
+		<clash>
+			<addAttribute id="Strength"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Strength"/>
+			<subtractAttribute id="Stamina"/>
+			<min amount="2"/>
+		</damage>
+		<refinement name="Swift Talons Tactic" rank="2" cost="5">
+		    <upgrades>
+		        <RangeUpgrade id="Mid"/>
+		    </upgrades>
+		    <option label="Movement?">
+				<AdvanceMovementOption/>
+				<StillMovementOption/>
+			</option>
+		</refinement>
+		<tag id="FireBinding"/>
+	</technique>
+	<technique name="Burning Scales Defense" style="Fire Dragon Style" range="Mid" movement="Still" type="Defensive">
+		<clash>
+			<addAttribute id="Stamina"/>
+			<addTechnique/>
+		</clash>
+		<option label="Movement?">
+			<BackMovementOption/>
+			<StillMovementOption/>
+		</option>
+		<effects>
+		    <OnVictoryCondition>
+		        <FullRestoreKiEffect/>
+		    </OnVictoryCondition>
+		</effects>
+		<tad id="Counterattack"/>
+		<tag id="FireBinding"/>
+	</technique>
+	<technique name="Smoking Mirror" style="Fire Dragon Style" range="Mid" movement="Still" type="Defensive" defeats="Strike">
+		<clash>
+			<addAttribute id="Dexterity"/>
+			<addConstant amount="1"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Dexterity"/>
+			<addConstant amount="1"/>
+			<subtractAttribute id="Dexterity"/>
+			<min amount="1"/>
+		</damage>
+		<tad id="Counterattack"/>
+		<tag id="ShadowBinding"/>
+	</technique>
+	<technique name="Flame and Shadow Dance" style="Fire Dragon Style" range="Close" movement="Still" type="Grapple" defeats="Rush,Defensive">
+		<KiCost amount="2"/>
+		<clash>
+			<addAttribute id="Dexterity"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Dexterity"/>
+			<addConstant amount="5"/>
+			<subtractAttribute id="Stamina"/>
+			<min amount="3"/>
+		</damage>
+		<tag id="DestroyHealthStock"/>
+		<tag id="Overdrive"/>
+	</technique>
+</techniques>

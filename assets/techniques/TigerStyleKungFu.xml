@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<techniques>
+	<style name="Tiger Style Kung Fu" type="Mortal"/>
+	<technique name="Hungry Tiger Technique" style="Tiger Style Kung Fu" range="Close" movement="Still" type="Strike" defeats="Grapple">
+		<clash>
+			<addAttribute id="Strength"/>
+			<addConstant amount="1"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Strength"/>
+			<addConstant amount="2"/>
+			<subtractAttribute id="Stamina"/>
+			<min amount="1"/>
+		</damage>
+	</technique>
+	<technique name="Tiger Siezes The Joint" style="Tiger Style Kung Fu" range="Close" movement="Still" type="Grapple" defeats="Strike">
+		<clash>
+			<addAttribute id="Strength"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Strength"/>
+			<addConstant amount="1"/>
+			<subtractAttribute id="Stamina"/>
+			<min amount="2"/>
+		</damage>
+		<effects>
+		    <OnHitCondition>
+		    	<FutureClashModEffect amount="-1" duration="2" range="Close"/>
+		    </OnHitCondition>
+		</effects>
+	</technique>
+	<technique name="Prone Fighting" style="Tiger Style Kung Fu" range="Close" movement="Still" type="Defensive">
+		<clash>
+			<addAttribute id="Dexterity"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Strength"/>
+			<addConstant amount="1"/>
+			<subtractAttribute id="Stamina"/>
+			<min amount="1"/>
+		</damage>
+		<tag id="NoClashPenalties"/>
+	</technique>
+</techniques>

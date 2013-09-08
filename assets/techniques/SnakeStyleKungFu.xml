@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<techniques>
+	<style name="Snake Style Kung Fu" type="Mortal"/>
+	<technique name="Serpent Blinds The Wolf" style="Snake Style Kung Fu" range="Close" movement="Still" type="Strike" defeats="Grapple">
+		<clash>
+			<addAttribute id="Dexterity"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Dexterity"/>
+			<addConstant amount="1"/>
+			<subtractAttribute id="Dexterity"/>
+			<min amount="1"/>
+		</damage>
+		<effects>
+		    <OnHitCondition>
+		    	<FutureClashModEffect amount="-2"/>
+		    </OnHitCondition>
+		</effects>
+	</technique>
+	<technique name="Striking Serpent Speed" style="Snake Style Kung Fu" range="Mid" movement="Advance" type="Rush" defeats="Strike">
+		<clash>
+			<addAttribute id="Dexterity"/>
+			<addConstant amount="2"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Dexterity"/>
+			<subtractAttribute id="Stamina"/>
+			<min amount="1"/>
+		</damage>
+	</technique>
+	<technique name="Snake Strikes The Heel" style="Snake Style Kung Fu" range="Close" movement="Still" type="Defensive" defeats="Rush">
+		<clash>
+			<addAttribute id="Dexterity"/>
+			<addConstant amount="1"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Dexterity"/>
+			<subtractAttribute id="Dexterity"/>
+			<min amount="2"/>
+		</damage>
+	</technique>
+</techniques>

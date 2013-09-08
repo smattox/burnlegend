@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+
+    <com.mobius.legend.management.CharacterManagementOverview
+        android:id="@+id/management_overview"
+    	android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"/>
+    	
+    	<LinearLayout
+	        	android:layout_width="match_parent"
+	        	android:layout_height="fill_parent"
+	        	android:layout_weight="5"
+    	android:orientation="vertical" >
+    
+	    <TextView
+		   android:id="@+id/bonusAttributePrompt"
+			   android:layout_width="wrap_content"
+			   android:layout_height="wrap_content"
+			   android:text="Okami Bonus Attribute" />
+	    <Spinner
+			  android:id="@+id/bonusAttribute"
+			  android:layout_width="match_parent"
+			  android:layout_height="wrap_content" />
+
+	    <TextView
+			   android:layout_width="wrap_content"
+			   android:layout_height="wrap_content"
+			   android:text="Attributes:" />
+	    <ListView
+		android:id="@+id/attributeList"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content" >
+	    </ListView>
+	</LinearLayout>
+    
+    <LinearLayout
+    	     android:layout_width="fill_parent"
+    	     android:layout_height="wrap_content"
+    	     android:layout_gravity="center_horizontal" >
+    
+    	 		<com.mobius.legend.character.creation.CharacterManagementNavigationView
+    	 		    android:id="@+id/navigation"
+    	 		    android:layout_width="0dp"
+    	 		    android:layout_height="wrap_content"
+    	 		    android:layout_gravity="center_horizontal"
+    	 		    android:layout_weight="1" />
+    
+	 </LinearLayout>
+</LinearLayout>

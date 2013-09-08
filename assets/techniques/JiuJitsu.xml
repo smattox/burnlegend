@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<techniques>
+	<style name="Brazilian Jiu-Jitsu" type="Mortal"/>
+	<technique name="Flying Armbar" style="Brazilian Jiu-Jitsu" range="Mid" movement="Advance" type="Aerial" defeats="Projectile">
+		<clash>
+			<addAttribute id="Dexterity"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Strength"/>
+			<addConstant amount="1"/>
+			<subtractAttribute id="Strength"/>
+			<min amount="1"/>
+		</damage>
+		<effects>
+		    <OnHitCondition>
+		    	<FutureClashModEffect amount="-2" duration="2"/>
+		    </OnHitCondition>
+		</effects>
+	</technique>
+	<technique name="Sliding Legbreaker" style="Brazilian Jiu-Jitsu" range="Mid" movement="Advance" type="Rush" defeats="Strike">
+		<clash>
+			<addAttribute id="Dexterity"/>
+			<addConstant amount="1"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Strength"/>
+			<addConstant amount="2"/>
+			<subtractAttribute id="Strength"/>
+			<min amount="1"/>
+		</damage>
+	</technique>
+	<technique name="Triangle Choke Hold" style="Brazilian Jiu-Jitsu" range="Close" movement="Still" type="Grapple" defeats="Defensive">
+		<clash>
+			<addAttribute id="Dexterity"/>
+			<addTechnique/>
+		</clash>
+		<damage>
+			<addAttribute id="Strength"/>
+			<addConstant amount="3"/>
+			<subtractAttribute id="Stamina"/>
+			<min amount="1"/>
+		</damage>
+	</technique>
+</techniques>
